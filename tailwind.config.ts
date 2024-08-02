@@ -9,9 +9,16 @@ const config: Config = {
   theme: {
     extend: {
       backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        landing: "url('/landing-bg.png')",
+      },
+      animation: {
+        circle: "draw 0.5s forwards",
+      },
+      keyframes: {
+        draw: {
+          from: { strokeDasharray: "0 1500" },
+          to: { strokeDasharray: "1500 1500" },
+        },
       },
     },
   },
