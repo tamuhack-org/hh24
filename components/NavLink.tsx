@@ -8,7 +8,7 @@ interface NavLinkProps {
 const NavLink = ({ href, label }: NavLinkProps) => {
   return (
     <div className="nav-link">
-      <Link href={href} className="px-4">
+      <Link href={href} className="px-1 sm:px-4">
         {label}
       </Link>
       <svg viewBox="0 0 500 150" preserveAspectRatio="none">
