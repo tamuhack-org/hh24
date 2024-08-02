@@ -9,7 +9,16 @@ const config: Config = {
   theme: {
     extend: {
       backgroundImage: {
-        "landing": "url('/landing-bg.png')",
+        landing: "url('/landing-bg.png')",
+      },
+      animation: {
+        circle: "draw 0.5s forwards",
+      },
+      keyframes: {
+        draw: {
+          from: { strokeDasharray: "0 1500" },
+          to: { strokeDasharray: "1500 1500" },
+        },
       },
     },
   },

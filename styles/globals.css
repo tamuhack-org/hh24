@@ -1,3 +1,38 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.nav-link {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.nav-link svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.nav-link path {
+  stroke: #b7865e;
+  stroke-width: 10px;
+  stroke-dasharray: 0 1500;
+}
+
+.nav-link:hover path {
+  animation: draw 0.5s forwards;
+}
+
+@keyframes draw {
+  from {
+    stroke-dasharray: 0 1500;
+  }
+
+  to {
+    stroke-dasharray: 1500 1500;
+  }
+}
