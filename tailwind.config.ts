@@ -10,6 +10,7 @@ const config: Config = {
     extend: {
       backgroundImage: {
         landing: "url('/landing-bg.png')",
+        "landing-top": "url('/landing-bg-top.png')",
       },
       animation: {
         circle: "draw 0.5s forwards",
