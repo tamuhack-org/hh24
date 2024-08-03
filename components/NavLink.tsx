@@ -3,11 +3,12 @@ import Link from "next/link";
 interface NavLinkProps {
   href: string;
   label: string;
+  disabled?: boolean;
 }
 
-const NavLink = ({ href, label }: NavLinkProps) => {
+const NavLink = ({ href, label, disabled = false }: NavLinkProps) => {
   return (
-    <div className="nav-link">
+    <div className={`nav-link ${disabled && 'cursor-not-allowed pointer-events-none opacity-50'}`}>
       <Link href={href} className="px-1 sm:px-4">
         {label}
       </Link>
