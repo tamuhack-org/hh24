@@ -92,7 +92,7 @@ export default function Home() {
     <main
       className={`${koulen.className} flex flex-col w-full bg-[#230606]`}
     >
-      <nav className="bg-landing-top bg-cover bg-center aspect-[905/92] w-full shadow-xl z-10 flex gap-8 md:gap-16 min-[2000px]:gap-32 px-4 md:px-8 justify-center items-center text-sm sm:text-lg lg:text-3xl min-[2000px]:text-5xl text-[#FFBF00]">
+      <nav className="bg-landing-top bg-cover bg-center aspect-[905/92] w-full shadow-xl z-10 flex gap-8 md:gap-16 min-[2000px]:gap-32 p-4 md:p-8 justify-center items-center text-sm sm:text-lg lg:text-3xl min-[2000px]:text-5xl text-[#FFBF00]">
         <NavLink href="#about" label="About" disabled />
         <NavLink href="#faq" label="FAQ" disabled />
         <NavLink href="#schedule" label="Schedule" disabled />
@@ -101,10 +101,7 @@ export default function Home() {
       <div className="bg-landing bg-cover bg-center aspect-[905/1408] w-full flex flex-col items-center justify-between pb-2">
         <Image src={sign} alt="TAMUhack HowdyHack 2024" className="-m-1 w-2/3 lg:w-1/2" />
         <div className="flex flex-col justify-center items-center text-center text-[#230606] w-full gap-8 md:gap-12 lg:gap-24">
-          <div className="flex flex-col sm:gap-2">
-            <h1 className="text-2xl sm:text-5xl lg:text-6xl min-[2000px]:text-8xl font-bold">September 28-29, 2024</h1>
-            <p className="text-lg sm:text-2xl lg:text-3xl min-[2000px]:text-4xl font-semibold">Registration Opening Soon</p>
-          </div>
+          <h1 className="text-2xl sm:text-5xl lg:text-6xl min-[2000px]:text-8xl font-bold">September 28-29, 2024</h1>
           <Image src={rev} alt="Reveille" className="w-1/2 lg:w-[535px] min-[2000px]:w-2/5" />
         </div>
       </div>
