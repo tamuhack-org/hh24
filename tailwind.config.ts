@@ -9,7 +9,7 @@ const config: Config = {
   theme: {
     extend: {
       backgroundImage: {
-        landing: "url('/landing-bg.png')",
+        landing: "url('/landing-bg-notop.jpg')",
         "landing-top": "url('/landing-bg-top.png')",
       },
       animation: {
