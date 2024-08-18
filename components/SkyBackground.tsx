@@ -41,31 +41,30 @@ const SkyBackground = () => {
 
     // Handle resizing
     window.addEventListener("resize", () => {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
     });
     window.dispatchEvent(new Event("resize"));
-    
+
     // Mouse position stuff
     let mousePosX = 0;
     let mousePosY = 0;
     let mouseOffsetX = 0;
     let mouseOffsetY = 0;
     window.addEventListener("mousemove", (event) => {
-        mousePosX = event.clientX;
-        mousePosY = event.clientY;
+      mousePosX = event.clientX;
+      mousePosY = event.clientY;
     });
 
     // Scroll position stuff
     let scrollPosY = 0;
     let scrollOffsetY = 0;
     window.addEventListener("scroll", (event) => {
-        scrollPosY = window.scrollY;
+      scrollPosY = window.scrollY;
     });
 
     let previousTime = Date.now();
-    function draw()
-    {
+    function draw() {
       // Calculate deltaTime
       const currentTime = Date.now();
       const deltaTime = currentTime - previousTime;
@@ -76,8 +75,7 @@ const SkyBackground = () => {
       const blend = 1 - (0.5 ** (deltaTime * 0.008));
       mouseOffsetX = mouseOffsetX + (mousePosX - mouseOffsetX) * blend;
       mouseOffsetY = mouseOffsetY + (mousePosY - mouseOffsetY) * blend;
-      if (window.innerWidth < NO_MOUSE_SCREEN_WIDTH_CUTOFF)
-      {
+      if (window.innerWidth < NO_MOUSE_SCREEN_WIDTH_CUTOFF) {
         mouseOffsetX = 0;
         mouseOffsetY = 0;
       }
@@ -85,7 +83,7 @@ const SkyBackground = () => {
       // Lerp scrollOffset to scrollPos over time, using deltaTime
       const blend2 = 1 - (0.5 ** (deltaTime * SCROLL_LERP_SPEED));
       scrollOffsetY = scrollOffsetY + (scrollPosY - scrollOffsetY) * blend2;
-      
+
       // Draw background image
       ctx.resetTransform();
       ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -96,21 +94,20 @@ const SkyBackground = () => {
       bgTrueY -= scrollOffsetY * SCROLL_EXTENT * Math.min(2000, window.innerWidth);
 
       const imageWidth = canvas.width + 100;
-      if (window.innerWidth > NO_LERP_SCREEN_WIDTH_CUTOFF)
-      {
+      if (window.innerWidth > NO_LERP_SCREEN_WIDTH_CUTOFF) {
         ctx.drawImage(backgroundImages[backgroundImageIndex], bgTrueX - 50, bgTrueY - (window.innerWidth * 0.2), imageWidth, imageWidth * backgroundImageHeight / backgroundImageWidth);
       }
-      
+
       requestAnimationFrame(draw);
     }
 
     draw();
   }, []);
 
-    
+
 
   return (
-    <canvas ref={canvasRef} className="fixed top-0 left-0 w-full h-full -z-50"></canvas>
+    <canvas ref={canvasRef} className="fixed top-0 h-full w-full max-w-[1000px]"></canvas>
   );
 };
 
