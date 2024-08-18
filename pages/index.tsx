@@ -3,112 +3,64 @@ import Image from "next/image";
 
 import sign from "../public/sign.png";
 import rev from "../public/rev.png";
+import woodBorder from "../public/wood-border.png";
+import logo from "../public/hh24-logo.png";
 import NavLink from "@/components/NavLink";
-import { useEffect, useRef } from "react";
+import ForegroundStatic from "@/components/ForegroundStatic";
+import { useEffect, useState } from "react";
 
 const koulen = Koulen({ subsets: ["latin"], weight: "400" });
 
+const backgroundImages = ['bg-warble1', 'bg-warble2', 'bg-warble3', 'bg-warble4'];
+
 export default function Home() {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const [backgroundImageIndex, setBackgroundImageIndex] = useState(0);
+  const [backgroundHeight, setBackgroundHeight] = useState(0);
 
   useEffect(() => {
-    const canvas = canvasRef.current as HTMLCanvasElement;
-    const ctx = canvas.getContext('2d') as CanvasRenderingContext2D;
+    const interval = setInterval(() => {
+      setBackgroundImageIndex((backgroundImageIndex + 1) % backgroundImages.length);
+    }, 200);
 
-    let wWidth = window.innerWidth;
-    let wHeight = window.innerHeight;
+    return () => clearInterval(interval);
+  }, [backgroundImageIndex]);
 
-    let noiseData: ImageData[] = [];
-    let frame = 0;
+  useEffect(() => {
+    setBackgroundHeight(document.getElementById('sunset')?.offsetHeight || 0);
 
-    let loopTimeout: number;
-    let animationFrameId: number;
-
-    const createNoise = () => {
-      const idata = ctx.createImageData(wWidth, wHeight);
-      const buffer32 = new Uint32Array(idata.data.buffer);
-      const len = buffer32.length;
-
-      for (let i = 0; i < len; i++) {
-        if (Math.random() < 0.5) {
-          buffer32[i] = 0xff000000;
-        }
-      }
-
-      noiseData.push(idata);
-    };
-
-    const paintNoise = () => {
-      if (frame === 9) {
-        frame = 0;
-      } else {
-        frame++;
-      }
-
-      ctx.putImageData(noiseData[frame], 0, 0);
-    };
-
-    const loop = () => {
-      paintNoise();
-
-      loopTimeout = window.setTimeout(() => {
-        animationFrameId = window.requestAnimationFrame(loop);
-      }, (1000 / 10));
-    };
-
-    const setup = () => {
-      wWidth = window.innerWidth;
-      wHeight = window.innerHeight;
-
-      canvas.width = wWidth;
-      canvas.height = wHeight;
-
-      noiseData = [];
-      for (let i = 0; i < 10; i++) {
-        createNoise();
-      }
-
-      loop();
-    };
-
-    const handleResize = () => {
-      window.clearTimeout(loopTimeout);
-      window.cancelAnimationFrame(animationFrameId);
-      setup();
-    };
-
-    setup();
-
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-      window.clearTimeout(loopTimeout);
-      window.cancelAnimationFrame(animationFrameId);
-    };
+    console.log(document.getElementById('sunset')?.offsetHeight);
   }, []);
 
   return (
     <main
-      className={`${koulen.className} flex flex-col w-full bg-[#230606]`}
+      className={`${koulen.className} flex flex-col items-center w-full bg-[#230505]`}
     >
-      <nav className="bg-landing-top bg-cover bg-center aspect-[905/92] w-full shadow-xl z-10 flex gap-8 md:gap-16 min-[2000px]:gap-32 px-4 md:px-8 justify-center items-center text-sm sm:text-lg lg:text-3xl min-[2000px]:text-5xl text-[#FFBF00]">
-        <NavLink href="#about" label="About" disabled />
-        <NavLink href="#faq" label="FAQ" disabled />
-        <NavLink href="#schedule" label="Schedule" disabled />
-        <NavLink href="#prizes" label="Prizes" disabled />
-      </nav>
-      <div className="bg-landing bg-cover bg-center aspect-[905/1408] w-full flex flex-col items-center justify-between pb-2">
-        <Image src={sign} alt="TAMUhack HowdyHack 2024" className="-m-1 w-2/3 lg:w-1/2" />
-        <div className="flex flex-col justify-center items-center text-center text-[#230606] w-full gap-8 md:gap-12 lg:gap-24">
-          <div className="flex flex-col sm:gap-2">
-            <h1 className="text-2xl sm:text-5xl lg:text-6xl min-[2000px]:text-8xl font-bold">September 28-29, 2024</h1>
-            <p className="text-lg sm:text-2xl lg:text-3xl min-[2000px]:text-4xl font-semibold">Registration Opening Soon</p>
-          </div>
-          <Image src={rev} alt="Reveille" className="w-1/2 lg:w-[535px] min-[2000px]:w-2/5" />
+      {/* <SkyBackground /> */}
+      <nav className="bg-[#230606] flex flex-col w-full items-center text-[#FFBF00] py-6 gap-4 min-[2000px]:gap-8 z-10">
+        <Image src={logo} alt="HowdyHack 2024 Logo" className="w-12 h-12 md:w-24 md:h-24 min-[1600px]:h-32 min-[1600px]:w-32" />
+        <div className="lg:h-20 w-full z-10 flex gap-8 md:gap-16 min-[2000px]:gap-32 px-2 pt-2 md:px-4 md:pt-4 min-[2000px]:pt-8 justify-center items-center text-sm sm:text-lg lg:text-3xl min-[2000px]:text-5xl text-[#FFBF00]">
+          <NavLink href="#about" label="About" />
+          <NavLink href="#faq" label="FAQ" />
+          <NavLink href="#schedule" label="Schedule" />
+          <NavLink href="#prizes" label="Prizes" />
         </div>
+      </nav>
+      <div className="bg-landing-top aspect-[905/46] h-[20px] md:h-[80px] z-20 w-full" />
+      <div className="flex z-10 w-full max-w-[1200px]">
+        <Image src={woodBorder} alt="Wooden border" className="aspect-[168/6286] w-[20px] md:w-[80px]" style={{ height: backgroundHeight }} />
+        <div id="sunset" className={`${backgroundImages[backgroundImageIndex]} bg-contain bg-no-repeat w-full flex flex-col justify-between items-center pb-1 aspect-[2/3]`}>
+          <Image src={sign} alt="TAMUhack HowdyHack 2024" className="-m-1 w-2/3 lg:w-1/2 max-w-[800px]" />
+          <div className="flex flex-col justify-center items-center text-center text-[#230606] w-full gap-8 md:gap-12 lg:gap-24">
+            <Image src={rev} alt="Reveille" className="w-1/2 lg:w-[55%]" />
+          </div>
+        </div>
+        <Image src={woodBorder} alt="Wooden border" className="aspect-[168/6286] w-[20px] md:w-[80px]" style={{ height: backgroundHeight }} />
       </div>
-      <canvas ref={canvasRef} className="z-50 fixed top-0 left-0 w-full h-full pointer-events-none opacity-10" />
+      <div className="bg-landing-top aspect-[905/46] h-[20px] md:h-[80px] z-20 w-full" />
+      <div className="bg-[#230606] w-full h-[400px]">
+        <p className="text-[#d1d1d1] text-center text-4xl mt-32">This website is under construction! Check back later for more details &lt;3</p>
+      </div>
+      <ForegroundStatic />
     </main>
   );
 }

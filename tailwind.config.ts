@@ -11,6 +11,10 @@ const config: Config = {
       backgroundImage: {
         landing: "url('/landing-bg.png')",
         "landing-top": "url('/landing-bg-top.png')",
+        warble1: "url('/landing-bg-warble1.jpg')",
+        warble2: "url('/landing-bg-warble2.jpg')",
+        warble3: "url('/landing-bg-warble3.jpg')",
+        warble4: "url('/landing-bg-warble4.jpg')",
       },
       animation: {
         circle: "draw 0.5s forwards",
