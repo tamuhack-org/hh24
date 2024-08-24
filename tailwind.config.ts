@@ -15,6 +15,7 @@ const config: Config = {
         warble2: "url('/landing-bg-warble2.jpg')",
         warble3: "url('/landing-bg-warble3.jpg')",
         warble4: "url('/landing-bg-warble4.jpg')",
+        "side-border": "url('/wood-border.png')",
       },
       animation: {
         circle: "draw 0.5s forwards",
