@@ -3,11 +3,11 @@ import Image from "next/image";
 
 import sign from "../public/sign.png";
 import rev from "../public/rev.png";
-import woodBorder from "../public/wood-border.png";
 import logo from "../public/hh24-logo.png";
 import NavLink from "@/components/NavLink";
 import ForegroundStatic from "@/components/ForegroundStatic";
 import { useEffect, useState } from "react";
+import useWindowWidth from "@/hooks/useWindowWidth";
 
 const koulen = Koulen({ subsets: ["latin"], weight: "400" });
 
@@ -16,6 +16,7 @@ const backgroundImages = ['bg-warble1', 'bg-warble2', 'bg-warble3', 'bg-warble4'
 export default function Home() {
   const [backgroundImageIndex, setBackgroundImageIndex] = useState(0);
   const [backgroundHeight, setBackgroundHeight] = useState(0);
+  const windowWidth = useWindowWidth();
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -26,8 +27,8 @@ export default function Home() {
   }, [backgroundImageIndex]);
 
   useEffect(() => {
-    setBackgroundHeight(document.getElementById('sunset')?.offsetHeight || 0);
-  }, []);
+    setBackgroundHeight(document.getElementById('sunset')?.offsetWidth! * 1.5 || 0);
+  }, [windowWidth]);
 
   return (
     <main
@@ -44,15 +45,17 @@ export default function Home() {
         </div>
       </nav>
       <div className="bg-landing-top aspect-[905/46] h-[20px] md:h-[80px] z-20 w-full shadow-lg" />
-      <div className="flex z-10 w-full max-w-[1200px]">
-        <Image src={woodBorder} alt="Wooden border" className="aspect-[168/6286] w-[20px] md:w-[80px] z-10" style={{ height: backgroundHeight }} />
+      <div className="flex z-10 w-full max-w-[1200px] h-full">
+        {/* <Image src={woodBorder} alt="Wooden border" className="w-[20px] md:w-[80px] z-10" style={{ height: backgroundHeight }} /> */}
+        <div className="bg-side-border h-full w-[20px] md:w-[80px] z-10" style={{ height: backgroundHeight }} />
         <div id="sunset" className={`${backgroundImages[backgroundImageIndex]} bg-contain bg-no-repeat w-full flex flex-col justify-between items-center pb-1 aspect-[2/3]`}>
           <Image src={sign} alt="TAMUhack HowdyHack 2024" className="-m-1 w-2/3 lg:w-1/2 max-w-[800px]" />
           <div className="flex flex-col justify-center items-center text-center text-[#230606] w-full gap-8 md:gap-12 lg:gap-24">
             <Image src={rev} alt="Reveille" className="w-1/2 lg:w-[55%]" />
           </div>
         </div>
-        <Image src={woodBorder} alt="Wooden border" className="aspect-[168/6286] w-[20px] md:w-[80px]" style={{ height: backgroundHeight }} />
+        {/* <Image src={woodBorder} alt="Wooden border" className="w-[20px] md:w-[80px]" style={{ height: backgroundHeight }} /> */}
+        <div className="bg-side-border h-full w-[20px] md:w-[80px] z-10" style={{ height: backgroundHeight }} />
       </div>
       <div className="bg-landing-top aspect-[905/46] h-[20px] md:h-[80px] z-20 w-full shadow-lg" />
       <div className="bg-[#230606] w-full h-[400px]">
