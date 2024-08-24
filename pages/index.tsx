@@ -58,8 +58,8 @@ export default function Home() {
         <div className="bg-side-border h-full w-[20px] md:w-[80px] z-10" style={{ height: backgroundHeight }} />
       </div>
       <div className="bg-landing-top aspect-[905/46] h-[20px] md:h-[80px] z-20 w-full shadow-lg" />
-      <div className="bg-[#230606] w-full h-[400px]">
-        <p className="text-[#d1d1d1] text-center text-4xl mt-32">This website is under construction! Check back later for more details &lt;3</p>
+      <div className="bg-[#230606] w-full p-8 sm:p-12 lg:p-32 flex justify-center items-center h-72">
+        <p className="text-[#d1d1d1] text-center text-xl md:text-4xl">This website is under construction! Check back later for more details &lt;3</p>
       </div>
       <ForegroundStatic />
     </main >
