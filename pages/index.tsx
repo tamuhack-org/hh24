@@ -60,7 +60,10 @@ export default function Home() {
               </div>
               <Link href="#" className="register-button sm:text-2xl lg:text-4xl font-bold py-1 px-2 sm:py-2 sm:px-4 lg:py-4 lg:px-8 rounded-md sm:rounded-lg w-fit">Coming Soon</Link>
             </div>
-            <Image src={rev} alt="Reveille" className="w-1/2 lg:w-[55%] shadow-4xl" />
+            <div className="flex flex-col w-full items-center relative">
+              <Image src={rev} alt="Reveille" className="w-1/2 lg:w-[55%] z-20" />
+              <div className="w-1/2 bg-black ellipse absolute bottom-0 sm:mb-1 lg:mb-6 opacity-35 h-8 sm:h-12 lg:h-16" />
+            </div>
           </div>
         </div>
         <div className="bg-side-border h-full w-[20px] md:w-[80px] z-10" style={{ height: backgroundHeight }} />
