@@ -96,3 +96,11 @@ body {
     }
   }
 }
+
+.ellipse {
+  width: 50%;
+  background-color: black;
+
+  /* Setting Border Radius */
+  border-radius: 50%;
+}
