@@ -58,7 +58,10 @@ export default function Home() {
                 <p className="text-[#1b0000] text-center text-xl sm:text-3xl lg:text-5xl font-bold">September 28-29, 2024</p>
                 <p className="text-[#1b0000] text-center text-xl sm:text-3xl lg:text-5xl font-bold">Texas A&M University</p>
               </div>
-              <Link href="https://register.tamuhack.com" target="_blank" rel="noopener noreferrer" className="register-button sm:text-2xl lg:text-4xl font-bold py-1 px-2 sm:py-2 sm:px-4 lg:py-4 lg:px-8 rounded-md sm:rounded-lg w-fit">Apply Here</Link>
+              <div className="flex gap-4">
+                <Link href="https://register.tamuhack.com" target="_blank" rel="noopener noreferrer" className="register-button sm:text-2xl lg:text-4xl font-bold py-1 px-2 sm:py-2 sm:px-4 lg:py-4 lg:px-8 rounded-md sm:rounded-lg w-fit">Apply</Link>
+                <Link href="https://tamuhack.org/mentor" target="_blank" rel="noopener noreferrer" className="register-button sm:text-2xl lg:text-4xl font-bold py-1 px-2 sm:py-2 sm:px-4 lg:py-4 lg:px-8 rounded-md sm:rounded-lg w-fit">Mentor</Link>
+              </div>
             </div>
             <div className="flex flex-col w-full items-center relative">
               <Image src={rev} alt="Reveille" className="w-1/2 lg:w-[55%] z-20" />
