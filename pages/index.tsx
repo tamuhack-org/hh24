@@ -73,17 +73,17 @@ export default function Home() {
         <div className="bg-side-border h-full w-[20px] md:w-[80px] z-10" style={{ height: backgroundHeight }} />
       </div>
       <div className="bg-landing-top aspect-[905/46] h-[20px] md:h-[80px] z-20 w-full shadow-lg" />
-      {/* <div className="bg-[#230606] w-full p-8 sm:p-12 lg:p-32 flex justify-center items-center h-72">
+      <div className="bg-[#230606] w-full p-8 sm:p-12 lg:p-32 flex justify-center items-center h-72">
         <p className="text-[#d1d1d1] text-center text-xl md:text-4xl">This website is under construction!<br />Check back later for more details &lt;3</p>
-      </div> */}
-      <div className="flex flex-col w-full items-center p-4 sm:p-8 lg:p-16 gap-4 md:gap-12 max-w-[1200px]">
+      </div>
+      {/* <div className="flex flex-col w-full items-center p-4 sm:p-8 lg:p-16 gap-4 md:gap-12 max-w-[1200px]">
         <h2 className={`${bevan.className} text-3xl sm:text-6xl lg:text-8xl text-[#F7BE41]`}>
           HOWDY Y'ALL
         </h2>
         <p className="text-white text-center text-sm sm:text-xl lg:text-2xl">
           HowdyHack is a 24-hour, themed, beginner focused hackathon exclusively for Texas A&M students, designed to showcase TAMU's diverse range of innovative ideas in a collaborative environment. At the event, you'll have the opportunity to create your own software and hardware products with up to 4 team members that wow judges and win prizes. Go gig 'em!
         </p>
-      </div>
+      </div> */}
       <ForegroundStatic />
     </main >
   );
