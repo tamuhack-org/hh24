@@ -1,4 +1,4 @@
-import { Koulen } from "next/font/google";
+import { Bevan, Koulen } from "next/font/google";
 import Image from "next/image";
 
 import sign from "../public/sign.png";
@@ -11,6 +11,7 @@ import useWindowWidth from "@/hooks/useWindowWidth";
 import Link from "next/link";
 
 const koulen = Koulen({ subsets: ["latin"], weight: "400" });
+const bevan = Bevan({ subsets: ["latin"], weight: "400" });
 
 const backgroundImages = ['bg-warble1', 'bg-warble2', 'bg-warble3', 'bg-warble4'];
 
@@ -53,14 +54,14 @@ export default function Home() {
         <div id="sunset" className={`${backgroundImages[backgroundImageIndex]} bg-contain bg-no-repeat w-full flex flex-col justify-between items-center pb-1 aspect-[2/3]`}>
           <Image src={sign} alt="TAMUhack HowdyHack 2024" className="-m-1 w-2/3 lg:w-1/2 max-w-[800px]" />
           <div className="flex flex-col justify-center items-center text-center text-[#230606] w-full gap-8 md:gap-12 lg:gap-24">
-            <div className="flex flex-col gap-2 sm:gap-8 items-center">
+            <div className="flex flex-col gap-2 sm:gap-6 lg:gap-8 items-center">
               <div className="flex flex-col sm:gap-3">
                 <p className="text-[#1b0000] text-center text-xl sm:text-3xl lg:text-5xl font-bold">September 28-29, 2024</p>
                 <p className="text-[#1b0000] text-center text-xl sm:text-3xl lg:text-5xl font-bold">Texas A&M University</p>
               </div>
-              <div className="flex gap-4">
-                <Link href="https://register.tamuhack.com" target="_blank" rel="noopener noreferrer" className="register-button sm:text-2xl lg:text-4xl font-bold py-1 px-2 sm:py-2 sm:px-4 lg:py-4 lg:px-8 rounded-md sm:rounded-lg w-fit">Apply</Link>
-                <Link href="https://tamuhack.org/mentor" target="_blank" rel="noopener noreferrer" className="register-button sm:text-2xl lg:text-4xl font-bold py-1 px-2 sm:py-2 sm:px-4 lg:py-4 lg:px-8 rounded-md sm:rounded-lg w-fit">Mentor</Link>
+              <div className="flex gap-4 w-full">
+                <Link href="https://register.tamuhack.com" target="_blank" rel="noopener noreferrer" className="register-button w-1/2 sm:text-2xl lg:text-4xl font-bold py-1 px-2 sm:py-2 sm:px-4 lg:py-4 lg:px-8 rounded-md sm:rounded-lg">Apply</Link>
+                <Link href="https://tamuhack.org/mentor" target="_blank" rel="noopener noreferrer" className="register-button w-1/2 sm:text-2xl lg:text-4xl font-bold py-1 px-2 sm:py-2 sm:px-4 lg:py-4 lg:px-8 rounded-md sm:rounded-lg">Mentor</Link>
               </div>
             </div>
             <div className="flex flex-col w-full items-center relative">
@@ -75,6 +76,14 @@ export default function Home() {
       <div className="bg-[#230606] w-full p-8 sm:p-12 lg:p-32 flex justify-center items-center h-72">
         <p className="text-[#d1d1d1] text-center text-xl md:text-4xl">This website is under construction!<br />Check back later for more details &lt;3</p>
       </div>
+      {/* <div className="flex flex-col w-full items-center p-4 sm:p-8 lg:p-16 gap-4 md:gap-12 max-w-[1200px]">
+        <h2 className={`${bevan.className} text-3xl sm:text-6xl lg:text-8xl text-[#F7BE41]`}>
+          HOWDY Y'ALL
+        </h2>
+        <p className="text-white text-center text-sm sm:text-xl lg:text-2xl">
+          HowdyHack is a 24-hour, themed, beginner focused hackathon exclusively for Texas A&M students, designed to showcase TAMU's diverse range of innovative ideas in a collaborative environment. At the event, you'll have the opportunity to create your own software and hardware products with up to 4 team members that wow judges and win prizes. Go gig 'em!
+        </p>
+      </div> */}
       <ForegroundStatic />
     </main >
   );
