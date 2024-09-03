@@ -37,7 +37,7 @@ export default function Home() {
       className={`${koulen.className} flex flex-col items-center w-full bg-[#1b0000]`}
     >
       {/* <SkyBackground /> */}
-      <nav className="bg-[#1b0000] flex flex-col w-full items-center text-[#FFBF00] py-6 gap-4 min-[2000px]:gap-8 z-10">
+      <nav className="bg-[#1b0000] flex flex-col w-full items-center text-[#FFBF00] py-6 min-[2000px]:py-12 gap-4 min-[2000px]:gap-8 z-10">
         <Link href="/">
           <Image src={logo} alt="HowdyHack 2024 Logo" className="w-12 h-12 md:w-24 md:h-24 min-[1600px]:h-30 min-[1600px]:w-30" />
         </Link>
