@@ -4,6 +4,11 @@ import Image from "next/image";
 import sign from "../public/sign.png";
 import rev from "../public/rev.png";
 import logo from "../public/hh24-logo.png";
+import genInfoTable from "../public/gen-info-table.png";
+import genInfoPapers from "../public/gen-info-papers.png";
+import genInfoCandles from "../public/gen-info-candles.png";
+import genInfoCoins from "../public/gen-info-coins.png";
+import genInfoPrints from "../public/gen-info-prints.png";
 import NavLink from "@/components/NavLink";
 import ForegroundStatic from "@/components/ForegroundStatic";
 import { useEffect, useState } from "react";
@@ -17,7 +22,8 @@ const backgroundImages = ['bg-warble1', 'bg-warble2', 'bg-warble3', 'bg-warble4'
 
 export default function Home() {
   const [backgroundImageIndex, setBackgroundImageIndex] = useState(0);
-  const [backgroundHeight, setBackgroundHeight] = useState(0);
+  const [sunsetBackgroundHeight, setSunsetBackgroundHeight] = useState(0);
+  const [genInfoBackgroundHeight, setGenInfoBackgroundHeight] = useState(0);
   const windowWidth = useWindowWidth();
 
   useEffect(() => {
@@ -29,8 +35,13 @@ export default function Home() {
   }, [backgroundImageIndex]);
 
   useEffect(() => {
-    setBackgroundHeight(document.getElementById('sunset')?.offsetWidth! * 1.5 || 0);
+    setSunsetBackgroundHeight(document.getElementById('sunset')?.offsetWidth! * 1.5 || 0);
+    setGenInfoBackgroundHeight(document.getElementById('gen-info')?.offsetHeight! || 0);
   }, [windowWidth]);
+
+  useEffect(() => {
+    console.log('genInfoBackgroundHeight', genInfoBackgroundHeight);
+  }, [genInfoBackgroundHeight]);
 
   return (
     <main
@@ -50,7 +61,7 @@ export default function Home() {
       </nav>
       <div className="bg-landing-top aspect-[905/46] h-[20px] md:h-[80px] z-20 w-full shadow-lg" />
       <div className="flex z-10 w-full max-w-[1200px] h-full">
-        <div className="bg-side-border h-full w-[20px] md:w-[80px] z-10" style={{ height: backgroundHeight }} />
+        <div className="bg-side-border h-full w-[20px] md:w-[80px] z-10" style={{ height: sunsetBackgroundHeight }} />
         <div id="sunset" className={`${backgroundImages[backgroundImageIndex]} bg-contain bg-no-repeat w-full flex flex-col justify-between items-center pb-1 aspect-[2/3]`}>
           <Image src={sign} alt="TAMUhack HowdyHack 2024" className="-m-1 w-2/3 lg:w-1/2 max-w-[800px]" />
           <div className="flex flex-col justify-center items-center text-center text-[#230606] w-full gap-8 md:gap-12 lg:gap-24">
@@ -70,20 +81,30 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="bg-side-border h-full w-[20px] md:w-[80px] z-10" style={{ height: backgroundHeight }} />
+        <div className="bg-side-border h-full w-[20px] md:w-[80px] z-10" style={{ height: sunsetBackgroundHeight }} />
       </div>
       <div className="bg-landing-top aspect-[905/46] h-[20px] md:h-[80px] z-20 w-full shadow-lg" />
-      <div className="bg-[#230606] w-full p-8 sm:p-12 lg:p-32 flex justify-center items-center h-72">
-        <p className="text-[#d1d1d1] text-center text-xl md:text-4xl">This website is under construction!<br />Check back later for more details &lt;3</p>
+      <div className="flex z-10 w-full max-w-[1200px] h-full">
+        <div className="bg-side-border bg-repeat w-[20px] md:w-[80px] z-10" style={{ height: genInfoBackgroundHeight }} />
+        <div id="gen-info" className="flex flex-col bg-gen-info bg-contain aspect-[2160/2683] w-full py-2 sm:py-4 lg:py-12">
+          <div className="flex flex-col w-full items-center p-4 sm:p-8 lg:p-16 gap-4 md:gap-12 max-w-[1200px]">
+            <h2 className={`${bevan.className} text-3xl sm:text-6xl lg:text-8xl text-[#F7BE41] text-center`}>
+              HOWDY Y'ALL!
+            </h2>
+            <p className="text-white text-center text-sm sm:text-xl lg:text-2xl">
+              HowdyHack is a 24-hour, themed, beginner focused hackathon exclusively for Texas A&M students, designed to showcase TAMU's diverse range of innovative ideas in a collaborative environment. At the event, you'll have the opportunity to create your own software and hardware products with up to 4 team members that wow judges and win prizes. Go gig 'em!
+            </p>
+          </div>
+          <div className="relative w-full h-full">
+            <Image src={genInfoTable} alt="HowdyHack 2024 General Information Table" className="absolute left-0 top-0 w-full" />
+            <Image src={genInfoPapers} alt="HowdyHack 2024 General Information Papers" className="absolute left-[2%] top-[12%] w-[55%]" style={{ filter: 'drop-shadow(5px 5px 2px #000)' }} />
+            <Image src={genInfoCandles} alt="HowdyHack 2024 General Information Candles" className="absolute right-0 top-2 w-1/3" style={{ filter: 'drop-shadow(5px 1px 2px #000)' }} />
+            <Image src={genInfoCoins} alt="HowdyHack 2024 General Information Coins" className="absolute left-[4%] top-[8%] w-[10%]" style={{ filter: 'drop-shadow(5px 5px 2px #000)' }} />
+            <Image src={genInfoPrints} alt="HowdyHack 2024 General Information Prints" className="absolute right-2 bottom-[40%] w-1/5" />
+          </div>
+        </div>
+        <div className="bg-side-border w-[20px] md:w-[80px] z-10" style={{ height: genInfoBackgroundHeight }} />
       </div>
-      {/* <div className="flex flex-col w-full items-center p-4 sm:p-8 lg:p-16 gap-4 md:gap-12 max-w-[1200px]">
-        <h2 className={`${bevan.className} text-3xl sm:text-6xl lg:text-8xl text-[#F7BE41]`}>
-          HOWDY Y'ALL
-        </h2>
-        <p className="text-white text-center text-sm sm:text-xl lg:text-2xl">
-          HowdyHack is a 24-hour, themed, beginner focused hackathon exclusively for Texas A&M students, designed to showcase TAMU's diverse range of innovative ideas in a collaborative environment. At the event, you'll have the opportunity to create your own software and hardware products with up to 4 team members that wow judges and win prizes. Go gig 'em!
-        </p>
-      </div> */}
       <ForegroundStatic />
     </main >
   );
