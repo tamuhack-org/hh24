@@ -104,10 +104,10 @@ export default function Home() {
         <div id="gen-info" className="flex flex-col bg-gen-info bg-contain aspect-[2160/2683] w-full h-fit py-2 sm:py-4 lg:py-12">
           <div className="flex flex-col w-full items-center p-4 sm:p-8 lg:p-16 gap-4 md:gap-12 max-w-[1200px]">
             <h2 className={`${bevan.className} text-3xl sm:text-6xl lg:text-8xl text-[#F7BE41] text-center`}>
-              HOWDY Y'ALL!
+              HOWDY Y&apos;ALL!
             </h2>
             <p className="text-white text-center text-sm sm:text-xl lg:text-2xl">
-              HowdyHack is a 24-hour, themed, beginner focused hackathon exclusively for Texas A&M students, designed to showcase TAMU's diverse range of innovative ideas in a collaborative environment. At the event, you'll have the opportunity to create your own software and hardware products with up to 4 team members that wow judges and win prizes. Go gig 'em!
+              HowdyHack is a 24-hour, themed, beginner focused hackathon exclusively for Texas A&M students, designed to showcase TAMU&apos;s diverse range of innovative ideas in a collaborative environment. At the event, you&apos;ll have the opportunity to create your own software and hardware products with up to 4 team members that wow judges and win prizes. Go gig &apos;em!
             </p>
           </div>
           <div className="relative w-full h-full">
@@ -146,7 +146,7 @@ export default function Home() {
                 To get started, click the apply button above! Sign up as soon as possible to secure your spot! For sign up to be a mentor, click the mentor button next to the apply button.
                 <br />
                 <br />
-                After you sign up, you will receive a confirmation email letting you know you're good to go. You can either form a team yourself, or you find one during the team building portion right before the competition! This phase is designed for forming well-rounded teams that bring together diverse strengths and perspectives.
+                After you sign up, you will receive a confirmation email letting you know you&apos;re good to go. You can either form a team yourself, or you find one during the team building portion right before the competition! This phase is designed for forming well-rounded teams that bring together diverse strengths and perspectives.
 
                 <br />
                 <br />
