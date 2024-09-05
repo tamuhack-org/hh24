@@ -14,6 +14,7 @@ import ForegroundStatic from "@/components/ForegroundStatic";
 import { useEffect, useState } from "react";
 import useWindowWidth from "@/hooks/useWindowWidth";
 import Link from "next/link";
+import { FaArrowDown, FaArrowRight } from "react-icons/fa";
 
 const koulen = Koulen({ subsets: ["latin"], weight: "400" });
 const bevan = Bevan({ subsets: ["latin"], weight: "400" });
@@ -24,6 +25,7 @@ export default function Home() {
   const [backgroundImageIndex, setBackgroundImageIndex] = useState(0);
   const [sunsetBackgroundHeight, setSunsetBackgroundHeight] = useState(0);
   const [genInfoBackgroundHeight, setGenInfoBackgroundHeight] = useState(0);
+  const [genInfoPapersHeight, setGenInfoPapersHeight] = useState(0);
   const windowWidth = useWindowWidth();
 
   useEffect(() => {
@@ -37,11 +39,8 @@ export default function Home() {
   useEffect(() => {
     setSunsetBackgroundHeight(document.getElementById('sunset')?.offsetWidth! * 1.5 || 0);
     setGenInfoBackgroundHeight(document.getElementById('gen-info')?.offsetHeight! || 0);
+    setGenInfoPapersHeight(document.getElementById('gen-info-papers')?.offsetHeight! || 0);
   }, [windowWidth]);
-
-  useEffect(() => {
-    console.log('genInfoBackgroundHeight', genInfoBackgroundHeight);
-  }, [genInfoBackgroundHeight]);
 
   return (
     <main
@@ -97,7 +96,27 @@ export default function Home() {
           </div>
           <div className="relative w-full h-full">
             <Image src={genInfoTable} alt="HowdyHack 2024 General Information Table" className="absolute left-0 top-0 w-full" />
-            <Image src={genInfoPapers} alt="HowdyHack 2024 General Information Papers" className="absolute left-[2%] top-[12%] w-[55%]" style={{ filter: 'drop-shadow(5px 5px 2px #000)' }} />
+            <div className="flex flex-col relative left-[2%] top-[12%] w-[60%]" style={{ height: genInfoPapersHeight }}>
+              <Image id="gen-info-papers" src={genInfoPapers} alt="HowdyHack 2024 General Information Papers" className="absolute top-0 left-0" style={{ filter: 'drop-shadow(5px 5px 2px #000)' }} />
+              <h3 className={`${bevan.className} rotate-[4deg] absolute left-[47%] top-[20%] w-[50%] text-sm sm:text-2xl md:text-3xl lg:text-5xl text-[#1b0000] text-center`}>WHERE?</h3>
+              <div className="rotate-[4deg] absolute left-[35%] top-[35%] w-[48%] flex flex-col items-center gap-1 sm:gap-2 lg:gap-8">
+                <p className="text-base sm:text-xl md:text-3xl lg:text-4xl text-[#1b0000] text-center" >
+                  MSC 2400
+                </p>
+                <p className="text-xs sm:text-base md:text-lg lg:text-3xl text-[#1b0000] text-center" >
+                  730 Olsen Blvd, College Station, TX 77845
+                </p>
+                <FaArrowDown className="text-[#1b0000] text-sm sm:text-base md:text-xl lg:text-4xl -mb-1 sm:-mb-3 lg:-mb-6" />
+                <div className="nav-link text-center w-fit p-1 sm:p-2">
+                  <Link href="/msc-map.png" target="_blank" rel="noopener noreferrer" className="text-xs sm:text-base md:text-lg lg:text-3xl text-[#1b0000] text-center" >
+                    Building Map
+                  </Link>
+                  <svg viewBox="0 0 500 150" preserveAspectRatio="none">
+                    <path fill="none" d="M325,18C228.7-8.3,118.5,8.3,78,21C22.4,38.4,4.6,54.6,5.6,77.6c1.4,32.4,52.2,54,142.6,63.7 c66.2,7.1,212.2,7.5,273.5-8.3c64.4-16.6,104.3-57.6,33.8-98.2C386.7-4.9,179.4-1.4,126.3,20.7" />
+                  </svg>
+                </div>
+              </div>
+            </div>
             <Image src={genInfoCandles} alt="HowdyHack 2024 General Information Candles" className="absolute right-0 top-2 w-1/3" style={{ filter: 'drop-shadow(5px 1px 2px #000)' }} />
             <Image src={genInfoCoins} alt="HowdyHack 2024 General Information Coins" className="absolute left-[4%] top-[8%] w-[10%]" style={{ filter: 'drop-shadow(5px 5px 2px #000)' }} />
             <Image src={genInfoPrints} alt="HowdyHack 2024 General Information Prints" className="absolute right-2 bottom-[40%] w-1/5" />
