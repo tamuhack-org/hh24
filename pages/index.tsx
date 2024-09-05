@@ -9,7 +9,7 @@ import genInfoPapers from "../public/gen-info-papers.png";
 import genInfoCandles from "../public/gen-info-candles.png";
 import genInfoCoins from "../public/gen-info-coins.png";
 import genInfoPrints from "../public/gen-info-prints.png";
-import NavLink from "@/components/NavLink";
+import CircleLink from "@/components/CircleLink";
 import ForegroundStatic from "@/components/ForegroundStatic";
 import { useEffect, useState } from "react";
 import useWindowWidth from "@/hooks/useWindowWidth";
@@ -52,10 +52,26 @@ export default function Home() {
           <Image src={logo} alt="HowdyHack 2024 Logo" className="w-12 h-12 md:w-24 md:h-24 min-[1600px]:h-30 min-[1600px]:w-30" />
         </Link>
         <div className="lg:h-20 w-full z-10 flex gap-8 md:gap-16 min-[2000px]:gap-32 px-2 pt-2 md:px-4 md:pt-4 min-[2000px]:pt-8 justify-center items-center text-sm sm:text-lg lg:text-3xl min-[2000px]:text-5xl text-[#FFBF00]">
-          <NavLink href="#about" label="About" disabled />
-          <NavLink href="#faq" label="FAQ" disabled />
-          <NavLink href="#schedule" label="Schedule" disabled />
-          <NavLink href="#prizes" label="Prizes" disabled />
+          <CircleLink>
+            <Link href="#about" className="px-1 sm:px-4">
+              About
+            </Link>
+          </CircleLink>
+          <CircleLink disabled>
+            <Link href="#schedule" className="px-1 sm:px-4">
+              Schedule
+            </Link>
+          </CircleLink>
+          <CircleLink disabled>
+            <Link href="#faq" className="px-1 sm:px-4">
+              FAQ
+            </Link>
+          </CircleLink>
+          <CircleLink disabled>
+            <Link href="#sponsors" className="px-1 sm:px-4">
+              Sponsors
+            </Link>
+          </CircleLink>
         </div>
       </nav>
       <div className="bg-landing-top aspect-[905/46] h-[20px] md:h-[80px] z-20 w-full shadow-lg" />
@@ -83,9 +99,9 @@ export default function Home() {
         <div className="bg-side-border h-full w-[20px] md:w-[80px] z-10" style={{ height: sunsetBackgroundHeight }} />
       </div>
       <div className="bg-landing-top aspect-[905/46] h-[20px] md:h-[80px] z-20 w-full shadow-lg" />
-      <div className="flex z-10 w-full max-w-[1200px] h-full">
+      <div id="about" className="flex z-10 w-full max-w-[1200px] h-full">
         <div className="bg-side-border bg-repeat w-[20px] md:w-[80px] z-10" style={{ height: genInfoBackgroundHeight }} />
-        <div id="gen-info" className="flex flex-col bg-gen-info bg-contain aspect-[2160/2683] w-full py-2 sm:py-4 lg:py-12">
+        <div id="gen-info" className="flex flex-col bg-gen-info bg-contain aspect-[2160/2683] w-full h-fit py-2 sm:py-4 lg:py-12">
           <div className="flex flex-col w-full items-center p-4 sm:p-8 lg:p-16 gap-4 md:gap-12 max-w-[1200px]">
             <h2 className={`${bevan.className} text-3xl sm:text-6xl lg:text-8xl text-[#F7BE41] text-center`}>
               HOWDY Y'ALL!
@@ -107,7 +123,7 @@ export default function Home() {
                   730 Olsen Blvd, College Station, TX 77845
                 </p>
                 <FaArrowDown className="text-[#1b0000] text-sm sm:text-base md:text-xl lg:text-4xl -mb-1 sm:-mb-3 lg:-mb-6" />
-                <div className="nav-link text-center w-fit p-1 sm:p-2">
+                <div className="nav-link text-center w-fit p-1 sm:p-3">
                   <Link href="/msc-map.png" target="_blank" rel="noopener noreferrer" className="text-xs sm:text-base md:text-lg lg:text-3xl text-[#1b0000] text-center" >
                     Building Map
                   </Link>
@@ -120,6 +136,47 @@ export default function Home() {
             <Image src={genInfoCandles} alt="HowdyHack 2024 General Information Candles" className="absolute right-0 top-2 w-1/3" style={{ filter: 'drop-shadow(5px 1px 2px #000)' }} />
             <Image src={genInfoCoins} alt="HowdyHack 2024 General Information Coins" className="absolute left-[4%] top-[8%] w-[10%]" style={{ filter: 'drop-shadow(5px 5px 2px #000)' }} />
             <Image src={genInfoPrints} alt="HowdyHack 2024 General Information Prints" className="absolute right-2 bottom-[40%] w-1/5" />
+          </div>
+          <div className="flex flex-col gap-16 md:gap-12 lg:gap-4 w-full">
+            <div className="flex flex-col w-full items-center p-4 sm:p-8 lg:p-16 gap-4 md:gap-8 max-w-[1200px] -mt-14">
+              <h3 className={`${bevan.className} text-xl sm:text-2xl md:text-3xl lg:text-5xl text-[#F7BE41] text-center`}>
+                HOW TO PARTICIPATE
+              </h3>
+              <p className="text-white text-center text-sm sm:text-xl lg:text-2xl">
+                To get started, click the apply button above! Sign up as soon as possible to secure your spot! For sign up to be a mentor, click the mentor button next to the apply button.
+                <br />
+                <br />
+                After you sign up, you will receive a confirmation email letting you know you're good to go. You can either form a team yourself, or you find one during the team building portion right before the competition! This phase is designed for forming well-rounded teams that bring together diverse strengths and perspectives.
+
+                <br />
+                <br />
+                <span className="text-xs sm:text-lg lg:text-xl italic">
+                  Applications are considered on a rolling basis; an application being accepted does not guarantee a spot in the hackathon. We have a limited space at the MSC, so we kindly ask you to arrive early on the day of the hackathon.
+                </span>
+              </p>
+            </div>
+            <div className="flex flex-col w-full items-center p-4 sm:p-8 lg:p-16 gap-4 md:gap-8 max-w-[1200px] -mt-14">
+              <h3 className={`${bevan.className} text-xl sm:text-2xl md:text-3xl lg:text-5xl text-[#F7BE41] text-center`}>
+                PARKING
+              </h3>
+              <p className="text-white text-center text-sm sm:text-xl lg:text-2xl">
+                Parking will be available at&nbsp;
+                <CircleLink>
+                  <Link href="https://maps.app.goo.gl/ceQELiAUQKdrBqqc6" target="_blank" rel="noopener noreferrer" className="text-[#F7BE41]">
+                    Lot 100t
+                  </Link>
+                </CircleLink>,&nbsp;
+                <CircleLink>
+                  <Link href="https://maps.app.goo.gl/9LnkaYUdw7PFyR5o6" target="_blank" rel="noopener noreferrer" className="text-[#F7BE41]">
+                    Lot 74
+                  </Link>
+                </CircleLink> and <CircleLink>
+                  <Link href="https://maps.app.goo.gl/cpA6zPJW3i6d3VtP7" target="_blank" rel="noopener noreferrer" className="text-[#F7BE41]">
+                    Lot 97
+                  </Link>
+                </CircleLink>. These lots are available for free parking during the event, no permit required. Please note that you cannot park in numbered spots, timed parking spaces, or university business or service spaces.
+              </p>
+            </div>
           </div>
         </div>
         <div className="bg-side-border w-[20px] md:w-[80px] z-10" style={{ height: genInfoBackgroundHeight }} />

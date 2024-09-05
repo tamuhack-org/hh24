@@ -8,7 +8,7 @@ body {
 
 .nav-link {
   position: relative;
-  display: flex;
+  display: inline;
   cursor: pointer;
 }
 
