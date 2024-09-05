@@ -138,7 +138,7 @@ export default function Home() {
             <Image src={genInfoPrints} alt="HowdyHack 2024 General Information Prints" className="absolute right-2 bottom-[40%] w-1/5" />
           </div>
           <div className="flex flex-col gap-16 md:gap-12 lg:gap-4 w-full">
-            <div className="flex flex-col w-full items-center p-4 sm:p-8 lg:p-16 gap-4 md:gap-8 max-w-[1200px] -mt-14">
+            <div className="flex flex-col w-full items-center p-4 sm:p-8 lg:p-16 gap-4 md:gap-8 max-w-[1200px] -mt-14 md:-mt-28">
               <h3 className={`${bevan.className} text-xl sm:text-2xl md:text-3xl lg:text-5xl text-[#F7BE41] text-center`}>
                 HOW TO PARTICIPATE
               </h3>
@@ -180,6 +180,14 @@ export default function Home() {
           </div>
         </div>
         <div className="bg-side-border w-[20px] md:w-[80px] z-10" style={{ height: genInfoBackgroundHeight }} />
+      </div>
+      <div className="bg-landing-top aspect-[905/46] h-[20px] md:h-[80px] z-20 w-full shadow-lg" />
+      <div id="about" className="flex z-10 w-full max-w-[1200px] h-full">
+        <div className="bg-side-border bg-repeat w-[20px] md:w-[80px] z-10 h-72" />
+        <div className="bg-[#1b0000] w-full p-8 sm:p-12 lg:p-32 flex justify-center items-center h-72">
+          <p className="text-white text-center text-xl md:text-4xl">This website is under construction!<br />Check back later for more details &lt;3</p>
+        </div>
+        <div className="bg-side-border w-[20px] md:w-[80px] z-10 h-72" />
       </div>
       <ForegroundStatic />
     </main >
