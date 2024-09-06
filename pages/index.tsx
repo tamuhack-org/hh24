@@ -1,14 +1,18 @@
 import { Bevan, Koulen } from "next/font/google";
 import Image from "next/image";
 
-import sign from "../public/sign.png";
-import rev from "../public/rev.png";
-import logo from "../public/hh24-logo.png";
-import genInfoTable from "../public/gen-info-table.png";
-import genInfoPapers from "../public/gen-info-papers.png";
-import genInfoCandles from "../public/gen-info-candles.png";
-import genInfoCoins from "../public/gen-info-coins.png";
-import genInfoPrints from "../public/gen-info-prints.png";
+import sign from "../public/assets/landing/sign.png";
+import rev from "../public/assets/landing/rev.png";
+import logo from "../public/assets/landing/hh24-logo.png";
+import genInfoTable from "../public/assets/gen-info/table.png";
+import genInfoPapers from "../public/assets/gen-info/papers.png";
+import genInfoCandles from "../public/assets/gen-info/candles.png";
+import genInfoCoins from "../public/assets/gen-info/coins.png";
+import genInfoPrints from "../public/assets/gen-info/prints.png";
+import scheduleTitle from "../public/assets/schedule/title.png";
+import lanterns from "../public/assets/schedule/lanterns.png";
+import postersLeft from "../public/assets/schedule/posters-left.png";
+import postersRight from "../public/assets/schedule/posters-right.png";
 import CircleLink from "@/components/CircleLink";
 import ForegroundStatic from "@/components/ForegroundStatic";
 import { useEffect, useState } from "react";
@@ -21,11 +25,20 @@ const bevan = Bevan({ subsets: ["latin"], weight: "400" });
 
 const backgroundImages = ['bg-warble1', 'bg-warble2', 'bg-warble3', 'bg-warble4'];
 
+interface ScheduleItem {
+  date: Date;
+  description: string;
+  event_name: string;
+  id: string;
+};
+
+
 export default function Home() {
   const [backgroundImageIndex, setBackgroundImageIndex] = useState(0);
   const [sunsetBackgroundHeight, setSunsetBackgroundHeight] = useState(0);
   const [genInfoBackgroundHeight, setGenInfoBackgroundHeight] = useState(0);
   const [genInfoPapersHeight, setGenInfoPapersHeight] = useState(0);
+  const [scheduleItems, setScheduleItems] = useState<ScheduleItem[]>();
   const windowWidth = useWindowWidth();
 
   useEffect(() => {
@@ -35,6 +48,14 @@ export default function Home() {
 
     return () => clearInterval(interval);
   }, [backgroundImageIndex]);
+
+  useEffect(() => {
+    const fetchSchedule = async () => {
+      const fetchResult = await fetch('https://hum-console.vercel.app/api/hh24').then((res) => res.json());
+      setScheduleItems(fetchResult.Items);
+    }
+    fetchSchedule();
+  }, []);
 
   useEffect(() => {
     setSunsetBackgroundHeight(document.getElementById('sunset')?.offsetWidth! * 1.5 || 0);
@@ -182,7 +203,54 @@ export default function Home() {
         <div className="bg-side-border w-[20px] md:w-[80px] z-10" style={{ height: genInfoBackgroundHeight }} />
       </div>
       <div className="bg-landing-top aspect-[905/46] h-[20px] md:h-[80px] z-20 w-full shadow-lg" />
-      <div id="about" className="flex z-10 w-full max-w-[1200px] h-full">
+      <div id="schedule" className="flex z-10 w-full max-w-[1200px] h-full">
+        <div className="bg-side-border bg-repeat w-[20px] md:w-[80px] z-10" />
+        <div className="bg-schedule w-full flex-col flex items-center">
+          <Image src={scheduleTitle} alt="Schedule" className="w-full -mt-1" />
+          <Image src={lanterns} alt="Lanterns" className="w-full -mt-16 sm:-mt-24 lg:-mt-48 z-20" />
+          <div className="flex w-full justify-between -mt-[32%] lg:-mt-[34%] mb-4 sm:mb-8 lg:mb-12">
+            <div className="hidden lg:flex h-full items-center w-[10%]">
+              <Image src={postersLeft} alt="Posters" />
+            </div>
+            <div className="bg-blackboard aspect-[1954/4473] bg-cover bg-no-repeat w-full lg:w-[80%] h-fit text-[rgba(255,255,255,0.5)] text-xs sm:text-lg md:text-xl min-[1160px]:text-2xl px-[9%] pt-[28%] sm:pt-[28%] md:pt-[25%] lg:pt-[22%] pb-[5%] sm:pb-[20%] flex flex-col gap-3 sm:gap-4 md:gap-8 lg:gap-12">
+              <div className="flex flex-col gap-2 sm:gap-3 lg:gap-6 w-full">
+                <h3 className="w-full text-center text-lg sm:text-2xl lg:text-4xl">Saturday</h3>
+                <div className="flex flex-col gap-1 sm:gap-2 lg:gap-3 min-[1160px]:gap-4">
+                  {scheduleItems?.filter((item) => {
+                    const temp = new Date(item.date);
+                    return temp.getDay() === 6;
+                  }).sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime()).map((item) => (
+                    <div key={item.id} className="flex justify-between gap-2">
+                      <p className="text-left w-fit">{new Date(item.date).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })}</p>
+                      <p className=" text-right">{item.event_name}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div className="flex flex-col gap-2 sm:gap-3 lg:gap-6 w-full">
+                <h3 className="w-full text-center text-lg sm:text-2xl lg:text-4xl">Sunday</h3>
+                <div className="flex flex-col gap-1 sm:gap-2 lg:gap-3 min-[1160px]:gap-4">
+                  {scheduleItems?.filter((item) => {
+                    const temp = new Date(item.date);
+                    return temp.getDay() === 0;
+                  }).sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime()).map((item) => (
+                    <div key={item.id} className="flex justify-between gap-2">
+                      <p className="text-left w-fit">{new Date(item.date).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })}</p>
+                      <p className=" text-right">{item.event_name}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+            <div className="hidden lg:flex h-full items-center w-[10%]">
+              <Image src={postersRight} alt="Posters" className="" />
+            </div>
+          </div>
+        </div>
+        <div className="bg-side-border w-[20px] md:w-[80px] z-10" />
+      </div>
+      <div className="bg-landing-top aspect-[905/46] h-[20px] md:h-[80px] z-20 w-full shadow-lg" />
+      <div id="construction" className="flex z-10 w-full max-w-[1200px] h-full">
         <div className="bg-side-border bg-repeat w-[20px] md:w-[80px] z-10 h-72" />
         <div className="bg-[#1b0000] w-full p-8 sm:p-12 lg:p-32 flex justify-center items-center h-72">
           <p className="text-white text-center text-xl md:text-4xl">This website is under construction!<br />Check back later for more details &lt;3</p>

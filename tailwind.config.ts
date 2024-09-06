@@ -9,15 +9,17 @@ const config: Config = {
   theme: {
     extend: {
       backgroundImage: {
-        landing: "url('/landing-bg.png')",
-        "landing-top": "url('/landing-bg-top.png')",
-        warble1: "url('/landing-bg-warble1.jpg')",
-        warble2: "url('/landing-bg-warble2.jpg')",
-        warble3: "url('/landing-bg-warble3.jpg')",
-        warble4: "url('/landing-bg-warble4.jpg')",
-        "side-border": "url('/wood-border.png')",
-        "gen-info": "url('/gen-info-bg.jpg')",
-        "gen-info-table": "url('/gen-info-table.png')",
+        landing: "url('/assets/landing/landing-bg.png')",
+        "landing-top": "url('/assets/landing/landing-bg-top.png')",
+        warble1: "url('/assets/landing/landing-bg-warble1.jpg')",
+        warble2: "url('/assets/landing/landing-bg-warble2.jpg')",
+        warble3: "url('/assets/landing/landing-bg-warble3.jpg')",
+        warble4: "url('/assets/landing/landing-bg-warble4.jpg')",
+        "side-border": "url('/assets/landing/wood-border.png')",
+        "gen-info": "url('/assets/gen-info/gen-info-bg.jpg')",
+        "gen-info-table": "url('/assets/gen-info/table.png')",
+        schedule: "url('/assets/schedule/schedule-bg.png')",
+        blackboard: "url('/assets/schedule/blackboard.png')",
       },
       animation: {
         circle: "draw 0.5s forwards",
