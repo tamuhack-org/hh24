@@ -13,6 +13,8 @@ import scheduleTitle from "../public/assets/schedule/title.png";
 import lanterns from "../public/assets/schedule/lanterns.png";
 import postersLeft from "../public/assets/schedule/posters-left.png";
 import postersRight from "../public/assets/schedule/posters-right.png";
+import table from "../public/assets/schedule/table.png";
+import chairs from "../public/assets/schedule/chairs.png";
 import CircleLink from "@/components/CircleLink";
 import ForegroundStatic from "@/components/ForegroundStatic";
 import { useEffect, useState } from "react";
@@ -205,7 +207,7 @@ export default function Home() {
       <div className="bg-landing-top aspect-[905/46] h-[20px] md:h-[80px] z-20 w-full shadow-lg" />
       <div id="schedule" className="flex z-10 w-full max-w-[1200px] h-full">
         <div className="bg-side-border bg-repeat w-[20px] md:w-[80px] z-10" />
-        <div className="bg-schedule w-full flex-col flex items-center">
+        <div className="bg-schedule w-full flex-col flex items-center relative">
           <Image src={scheduleTitle} alt="Schedule" className="w-full -mt-1" />
           <Image src={lanterns} alt="Lanterns" className="w-full -mt-16 sm:-mt-24 lg:-mt-48 z-20" />
           <div className="flex w-full justify-between -mt-[32%] lg:-mt-[34%] mb-4 sm:mb-8 lg:mb-12">
@@ -246,6 +248,8 @@ export default function Home() {
               <Image src={postersRight} alt="Posters" className="" />
             </div>
           </div>
+          <Image src={table} alt="Table" className="w-full -mb-1" />
+          <Image src={chairs} alt="Chairs" className="absolute bottom-0 w-4/5" />
         </div>
         <div className="bg-side-border w-[20px] md:w-[80px] z-10" />
       </div>
