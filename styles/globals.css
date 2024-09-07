@@ -106,6 +106,7 @@ body {
   border-radius: 50%;
 }
 
-#schedule {
+#schedule,
+#chalkboard {
   font-family: "Comico", cursive;
 }

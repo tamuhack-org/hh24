@@ -20,6 +20,10 @@ const config: Config = {
         "gen-info-table": "url('/assets/gen-info/table.png')",
         schedule: "url('/assets/schedule/schedule-bg.png')",
         blackboard: "url('/assets/schedule/blackboard.png')",
+        prizes: "url('/assets/prizes/prizes-bg.png')",
+        "dartboard-wood": "url('/assets/prizes/dartboard-bg.png')",
+        chalkboard: "url('/assets/prizes/chalkboard.png')",
+        "prizes-title": "url('/assets/prizes/title-bg.png')",
       },
       animation: {
         circle: "draw 0.5s forwards",
