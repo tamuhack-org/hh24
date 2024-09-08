@@ -15,6 +15,12 @@ import postersLeft from "../public/assets/schedule/posters-left.png";
 import postersRight from "../public/assets/schedule/posters-right.png";
 import table from "../public/assets/schedule/table.png";
 import chairs from "../public/assets/schedule/chairs.png";
+import camera from '../public/assets/prizes/camera.png';
+import drone from '../public/assets/prizes/drone.png';
+import echo from '../public/assets/prizes/echo.png';
+import miniProjector from '../public/assets/prizes/mini-projector.png';
+import revPlush from '../public/assets/prizes/rev-plush.png';
+import monitor from '../public/assets/prizes/monitor.png';
 import CircleLink from "@/components/CircleLink";
 import ForegroundStatic from "@/components/ForegroundStatic";
 import { useEffect, useState } from "react";
@@ -28,6 +34,38 @@ const koulen = Koulen({ subsets: ["latin"], weight: "400" });
 const bevan = Bevan({ subsets: ["latin"], weight: "400" });
 
 const backgroundImages = ['bg-warble1', 'bg-warble2', 'bg-warble3', 'bg-warble4'];
+const prizes = [
+  {
+    image: camera,
+    name: 'Film Camera',
+    prizeType: 'Best UI/UX',
+  },
+  {
+    image: revPlush,
+    name: 'Reveille Plush',
+    prizeType: 'Best Aggie Hack',
+  },
+  {
+    image: drone,
+    name: 'Drone with Camera',
+    prizeType: 'Second Overall',
+  },
+  {
+    image: echo,
+    name: 'Amazon Echo Pop',
+    prizeType: 'Third Overall',
+  },
+  {
+    image: miniProjector,
+    name: 'Mini Projector',
+    prizeType: 'Best Wild West Hack',
+  },
+  {
+    image: monitor,
+    name: '24" 165Hz Gaming Monitor',
+    prizeType: 'First Overall',
+  },
+];
 
 interface ScheduleItem {
   date: Date;
@@ -36,13 +74,13 @@ interface ScheduleItem {
   id: string;
 };
 
-
 export default function Home() {
   const [backgroundImageIndex, setBackgroundImageIndex] = useState(0);
   const [sunsetBackgroundHeight, setSunsetBackgroundHeight] = useState(0);
   const [genInfoBackgroundHeight, setGenInfoBackgroundHeight] = useState(0);
   const [genInfoPapersHeight, setGenInfoPapersHeight] = useState(0);
   const [scheduleItems, setScheduleItems] = useState<ScheduleItem[]>();
+  const [mouseOverIndex, setMouseOverIndex] = useState(1);
   const windowWidth = useWindowWidth();
 
   useEffect(() => {
@@ -211,7 +249,7 @@ export default function Home() {
         <div className="bg-side-border bg-repeat w-[20px] md:w-[80px] z-10" />
         <div className="bg-schedule w-full flex-col flex items-center relative">
           <Image src={scheduleTitle} alt="Schedule" className="w-full -mt-1" />
-          <Image src={lanterns} alt="Lanterns" className="w-full -mt-16 sm:-mt-24 lg:-mt-48 z-20" />
+          <Image src={lanterns} alt="Lanterns" className="w-full -mt-16 sm:-mt-24 lg:-mt-48 z-20 pointer-events-none" />
           <div className="flex w-full justify-between -mt-[32%] lg:-mt-[34%] mb-4 sm:mb-8 lg:mb-12">
             <div className="hidden lg:flex h-full items-center w-[10%]">
               <Image src={postersLeft} alt="Posters" />
@@ -263,13 +301,38 @@ export default function Home() {
             <h2 className={`${bevan.className} text-3xl sm:text-6xl lg:text-6xl text-[#ba917c] text-center`}>PRIZES</h2>
           </div>
           <div className="flex w-full items-center gap-4">
-            <div className="bg-dartboard-wood aspect-square bg-cover bg-no-repeat w-1/2 h-fit flex flex-col justify-center items-center p-6 lg:p-16" style={{ filter: 'drop-shadow(3px 3px 5px #2F0800)' }}>
+            <div className="bg-dartboard-wood aspect-square bg-cover bg-no-repeat w-1/2 h-fit hidden lg:flex flex-col justify-center items-center p-6 lg:p-16" style={{ filter: 'drop-shadow(3px 3px 5px #2F0800)' }}>
               <div className="w-full bg-[#040000] rounded-full aspect-square flex flex-col justify-center items-center pr-1" style={{ filter: 'drop-shadow(5px 7px 0 #2F0800)' }}>
-                <Dartboard />
+                <Dartboard mouseOverIndex={mouseOverIndex} setMouseOverIndex={setMouseOverIndex} />
               </div>
             </div>
-            <div id="chalkboard" className="bg-chalkboard text-[rgba(255,255,255,0.5)] aspect-[1722/2304] bg-cover bg-no-repeat w-1/2 h-full py-[5.5%] px-[10%]" style={{ filter: 'drop-shadow(3px 3px 5px #2F0800)' }}>
-              <h4 className="w-full text-center text-xs sm:text-2xl lg:text-4xl">OVERALL</h4>
+            <div className="chalkboard bg-chalkboard-empty text-[rgba(255,255,255,0.5)] aspect-[1722/2304] bg-cover bg-no-repeat w-full lg:w-1/2 h-full py-[5.5%] px-[10%] hidden lg:flex items-center justify-center" style={{ filter: 'drop-shadow(3px 3px 5px #2F0800)' }}>
+              {mouseOverIndex === -1 ?
+                <h4 className="text-center sm:text-xl md:text-2xl lg:text-3xl">Hover over the dartboard to see the prizes!</h4> :
+                <div className="flex flex-col w-full items-center justify-center gap-8">
+                  <Image src={prizes[mouseOverIndex].image} alt={prizes[mouseOverIndex].name} className="w-4/5" />
+                  <div className="flex flex-col h-1/2 w-full justify-center gap-2">
+                    <p className="text-center sm:text-xl md:text-2xl lg:text-3xl">{prizes[mouseOverIndex].name}</p>
+                    <p className="text-center text-sm sm:text-base md:text-lg lg:text-xl">{prizes[mouseOverIndex].prizeType}</p>
+                  </div>
+                </div>
+              }
+            </div>
+            <div className="chalkboard bg-chalkboard aspect-[1722/2304] bg-no-repeat bg-cover py-[10%] px-[15%] w-full flex flex-col lg:hidden gap-[8%] md:gap-[9%] text-[rgba(255,255,255,0.5)]">
+              <h4 className="text-center text-[clamp(1rem,5vw,10rem)]">Prizes</h4>
+              <div className="flex flex-col w-full gap-2 min-[520px]:gap-3">
+                {prizes.map((prize, index) => (
+                  <div key={index} className="flex flex-row items-center h-full gap-[8%]">
+                    <div className="w-[55%] flex flex-col gap-1">
+                      <p className="text-center text-[10px] min-[510px]:text-base md:text-lg">{prize.name}</p>
+                      <p className="text-center text-[8px] min-[510px]:text-sm md:text-base">{prize.prizeType}</p>
+                    </div>
+                    <div className="w-[45%] flex justify-center">
+                      <Image src={prize.image} alt={prize.name} className="w-1/2 sm:w-[60%]" />
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -279,7 +342,7 @@ export default function Home() {
       <div id="construction" className="flex z-10 w-full max-w-[1200px] h-full">
         <div className="bg-side-border w-[20px] md:w-[80px] z-10 h-72" />
         <div className="bg-[#1b0000] w-full p-8 sm:p-12 lg:p-32 flex justify-center items-center h-72">
-          <p className="text-white text-center text-xl md:text-4xl">This website is under construction!<br />Check back later for more details &lt;3</p>
+          <p className="text-white text-center text-xl md:text-4xl">The FAQ section is under construction!<br />Check back later for more details 🤠</p>
         </div>
         <div className="bg-side-border w-[20px] md:w-[80px] z-10 h-72" />
       </div>

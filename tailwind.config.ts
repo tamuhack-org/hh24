@@ -23,6 +23,7 @@ const config: Config = {
         prizes: "url('/assets/prizes/prizes-bg.png')",
         "dartboard-wood": "url('/assets/prizes/dartboard-bg.png')",
         chalkboard: "url('/assets/prizes/chalkboard.png')",
+        "chalkboard-empty": "url('/assets/prizes/chalkboard-empty.png')",
         "prizes-title": "url('/assets/prizes/title-bg.png')",
       },
       animation: {

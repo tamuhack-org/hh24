@@ -107,6 +107,6 @@ body {
 }
 
 #schedule,
-#chalkboard {
+.chalkboard {
   font-family: "Comico", cursive;
 }
