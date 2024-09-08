@@ -220,7 +220,7 @@ export default function Home() {
                 </p>
                 <FaArrowDown className="text-[#1b0000] text-sm sm:text-base md:text-xl lg:text-4xl -mb-1 sm:-mb-3 lg:-mb-6" />
                 <div className="nav-link text-center w-fit p-1 sm:p-3">
-                  <Link href="/msc-map.png" target="_blank" rel="noopener noreferrer" className="text-xs sm:text-base md:text-lg lg:text-3xl text-[#1b0000] text-center" >
+                  <Link href="/assets/msc-map.png" target="_blank" rel="noopener noreferrer" className="text-xs sm:text-base md:text-lg lg:text-3xl text-[#1b0000] text-center" >
                     Building Map
                   </Link>
                   <svg viewBox="0 0 500 150" preserveAspectRatio="none">
