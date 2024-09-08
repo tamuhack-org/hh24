@@ -424,7 +424,7 @@ export default function Home() {
               <p className="text-base mb-2">Socials</p>
               <div className="flex flex-col gap-1 mb-2">
                 {socials.map(social =>
-                  <CircleLink>
+                  <CircleLink key={social.name}>
                     <Link href={social.link} target="_blank" rel="noreferrer noopener" className="font-semibold text-lg" key={social.name}>
                       {social.name}
                     </Link>
@@ -436,7 +436,7 @@ export default function Home() {
               <p className="text-base mb-2">Workshops</p>
               <div className="flex flex-col gap-1 mb-2">
                 {workshops.map(workshop =>
-                  <CircleLink>
+                  <CircleLink key={workshop.name}>
                     <Link href={workshop.link} target="_blank" rel="noreferrer noopener" className="font-semibold text-lg" key={workshop.name}>
                       {workshop.name}
                     </Link>
