@@ -377,7 +377,7 @@ export default function Home() {
                   value="Subscribe"
                   name="subscribe"
                   id="mc-embedded-subscribe"
-                  className="h-full px-4 py-2 rounded-lg transition-shadow duration-200 border text-base font-bold cursor-pointer"
+                  className="h-full px-4 py-2 rounded-lg transition-colors duration-200 border text-base font-bold cursor-pointer hover:bg-[#FFBF00] hover:text-[#1b0000]"
                 />
               </button>
             </div>
