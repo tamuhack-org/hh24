@@ -34,7 +34,7 @@ const koulen = Koulen({ subsets: ["latin"], weight: "400" });
 const bevan = Bevan({ subsets: ["latin"], weight: "400" });
 
 const backgroundImages = ['bg-warble1', 'bg-warble2', 'bg-warble3', 'bg-warble4'];
-const prizes = [
+const dartboardPrizes = [
   {
     image: camera,
     name: 'Film Camera',
@@ -67,6 +67,39 @@ const prizes = [
   },
 ];
 
+const chalkboardPrizes = [
+  {
+    image: monitor,
+    name: '24" 165Hz Gaming Monitor',
+    prizeType: 'First Overall',
+  },
+  {
+    image: drone,
+    name: 'Drone with Camera',
+    prizeType: 'Second Overall',
+  },
+  {
+    image: echo,
+    name: 'Amazon Echo Pop',
+    prizeType: 'Third Overall',
+  },
+  {
+    image: camera,
+    name: 'Film Camera',
+    prizeType: 'Best UI/UX',
+  },
+  {
+    image: revPlush,
+    name: 'Reveille Plush',
+    prizeType: 'Best Aggie Hack',
+  },
+  {
+    image: miniProjector,
+    name: 'Mini Projector',
+    prizeType: 'Best Wild West Hack',
+  },
+];
+
 interface ScheduleItem {
   date: Date;
   description: string;
@@ -80,7 +113,7 @@ export default function Home() {
   const [genInfoBackgroundHeight, setGenInfoBackgroundHeight] = useState(0);
   const [genInfoPapersHeight, setGenInfoPapersHeight] = useState(0);
   const [scheduleItems, setScheduleItems] = useState<ScheduleItem[]>();
-  const [mouseOverIndex, setMouseOverIndex] = useState(1);
+  const [mouseOverIndex, setMouseOverIndex] = useState(-1);
   const windowWidth = useWindowWidth();
 
   useEffect(() => {
@@ -112,7 +145,7 @@ export default function Home() {
       {/* <SkyBackground /> */}
       <nav className="bg-[#1b0000] flex flex-col w-full items-center text-[#FFBF00] py-6 min-[2000px]:py-12 gap-4 min-[2000px]:gap-8 z-10">
         <Link href="/">
-          <Image src={logo} alt="HowdyHack 2024 Logo" className="w-12 h-12 md:w-24 md:h-24 min-[1600px]:h-30 min-[1600px]:w-30 hover:animate-spin transition-all" />
+          <Image src={logo} alt="HowdyHack 2024 Logo" className="w-12 h-12 md:w-24 md:h-24 min-[1600px]:h-30 min-[1600px]:w-30" />
         </Link>
         <div className="lg:h-20 w-full z-10 flex gap-8 md:gap-16 min-[2000px]:gap-32 px-2 pt-2 md:px-4 md:pt-4 min-[2000px]:pt-8 justify-center items-center text-sm sm:text-lg lg:text-3xl min-[2000px]:text-5xl text-[#FFBF00]">
           <CircleLink>
@@ -187,7 +220,7 @@ export default function Home() {
                 </p>
                 <FaArrowDown className="text-[#1b0000] text-sm sm:text-base md:text-xl lg:text-4xl -mb-1 sm:-mb-3 lg:-mb-6" />
                 <div className="nav-link text-center w-fit p-1 sm:p-3">
-                  <Link href="/msc-map.png" target="_blank" rel="noopener noreferrer" className="text-xs sm:text-base md:text-lg lg:text-3xl text-[#1b0000] text-center" >
+                  <Link href="/assets/msc-map.png" target="_blank" rel="noopener noreferrer" className="text-xs sm:text-base md:text-lg lg:text-3xl text-[#1b0000] text-center" >
                     Building Map
                   </Link>
                   <svg viewBox="0 0 500 150" preserveAspectRatio="none">
@@ -310,10 +343,10 @@ export default function Home() {
               {mouseOverIndex === -1 ?
                 <h4 className="text-center sm:text-xl md:text-2xl lg:text-3xl">Hover over the dartboard to see the prizes!</h4> :
                 <div className="flex flex-col w-full items-center justify-center gap-8">
-                  <Image src={prizes[mouseOverIndex].image} alt={prizes[mouseOverIndex].name} className="w-4/5" />
+                  <Image src={dartboardPrizes[mouseOverIndex].image} alt={dartboardPrizes[mouseOverIndex].name} className="w-4/5" />
                   <div className="flex flex-col h-1/2 w-full justify-center gap-2">
-                    <p className="text-center sm:text-xl md:text-2xl lg:text-3xl">{prizes[mouseOverIndex].name}</p>
-                    <p className="text-center text-sm sm:text-base md:text-lg lg:text-xl">{prizes[mouseOverIndex].prizeType}</p>
+                    <p className="text-center sm:text-xl md:text-2xl lg:text-3xl">{dartboardPrizes[mouseOverIndex].name}</p>
+                    <p className="text-center text-sm sm:text-base md:text-lg lg:text-xl">{dartboardPrizes[mouseOverIndex].prizeType}</p>
                   </div>
                 </div>
               }
@@ -321,7 +354,7 @@ export default function Home() {
             <div className="chalkboard bg-chalkboard aspect-[1722/2304] bg-no-repeat bg-cover py-[10%] px-[15%] w-full flex flex-col lg:hidden gap-[8%] md:gap-[9%] text-[rgba(255,255,255,0.5)]">
               <h4 className="text-center text-[clamp(1rem,5vw,10rem)]">Prizes</h4>
               <div className="flex flex-col w-full gap-2 min-[520px]:gap-3">
-                {prizes.map((prize, index) => (
+                {chalkboardPrizes.map((prize, index) => (
                   <div key={index} className="flex flex-row items-center h-full gap-[8%]">
                     <div className="w-[55%] flex flex-col gap-1">
                       <p className="text-center text-[10px] min-[510px]:text-base md:text-lg">{prize.name}</p>
