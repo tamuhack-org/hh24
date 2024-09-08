@@ -105,3 +105,8 @@ body {
   /* Setting Border Radius */
   border-radius: 50%;
 }
+
+#schedule,
+.chalkboard {
+  font-family: "Comico", cursive;
+}
