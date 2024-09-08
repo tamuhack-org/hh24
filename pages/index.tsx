@@ -80,7 +80,7 @@ export default function Home() {
   const [genInfoBackgroundHeight, setGenInfoBackgroundHeight] = useState(0);
   const [genInfoPapersHeight, setGenInfoPapersHeight] = useState(0);
   const [scheduleItems, setScheduleItems] = useState<ScheduleItem[]>();
-  const [mouseOverIndex, setMouseOverIndex] = useState(1);
+  const [mouseOverIndex, setMouseOverIndex] = useState(-1);
   const windowWidth = useWindowWidth();
 
   useEffect(() => {
