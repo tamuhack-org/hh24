@@ -25,6 +25,11 @@ const config: Config = {
         chalkboard: "url('/assets/prizes/chalkboard.png')",
         "chalkboard-empty": "url('/assets/prizes/chalkboard-empty.png')",
         "prizes-title": "url('/assets/prizes/title-bg.png')",
+        faq: "url('/assets/faq/faq-bg.png')",
+        "classic-frame": "url('/assets/faq/classic-frame.png')",
+        "purple-frame": "url('/assets/faq/purple-frame.png')",
+        "pink-frame": "url('/assets/faq/pink-frame.png')",
+        "brown-frame": "url('/assets/faq/brown-frame.png')",
       },
       animation: {
         circle: "draw 0.5s forwards",

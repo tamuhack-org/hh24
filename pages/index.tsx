@@ -21,6 +21,8 @@ import echo from '../public/assets/prizes/echo.png';
 import miniProjector from '../public/assets/prizes/mini-projector.png';
 import revPlush from '../public/assets/prizes/rev-plush.png';
 import monitor from '../public/assets/prizes/monitor.png';
+import plant from '../public/assets/faq/plant.png';
+import mouse from '../public/assets/faq/mouse.png';
 import CircleLink from "@/components/CircleLink";
 import ForegroundStatic from "@/components/ForegroundStatic";
 import { useEffect, useState } from "react";
@@ -112,6 +114,7 @@ export default function Home() {
   const [sunsetBackgroundHeight, setSunsetBackgroundHeight] = useState(0);
   const [genInfoBackgroundHeight, setGenInfoBackgroundHeight] = useState(0);
   const [genInfoPapersHeight, setGenInfoPapersHeight] = useState(0);
+  const [faqBackgroundHeight, setFaqBackgroundHeight] = useState(0);
   const [scheduleItems, setScheduleItems] = useState<ScheduleItem[]>();
   const [mouseOverIndex, setMouseOverIndex] = useState(-1);
   const windowWidth = useWindowWidth();
@@ -136,6 +139,7 @@ export default function Home() {
     setSunsetBackgroundHeight(document.getElementById('sunset')?.offsetWidth! * 1.5 || 0);
     setGenInfoBackgroundHeight(document.getElementById('gen-info')?.offsetHeight! || 0);
     setGenInfoPapersHeight(document.getElementById('gen-info-papers')?.offsetHeight! || 0);
+    setFaqBackgroundHeight(document.getElementById('faq')?.offsetHeight! || 0);
   }, [windowWidth]);
 
   return (
@@ -163,7 +167,7 @@ export default function Home() {
               Prizes
             </Link>
           </CircleLink>
-          <CircleLink disabled>
+          <CircleLink>
             <Link href="#faq" className="px-1 sm:px-4">
               FAQ
             </Link>
@@ -199,7 +203,7 @@ export default function Home() {
         <div className="bg-side-border bg-repeat w-[20px] md:w-[80px] z-10" style={{ height: genInfoBackgroundHeight }} />
         <div id="gen-info" className="flex flex-col bg-gen-info bg-cover aspect-[2160/2700] w-full h-fit py-2 sm:py-4 lg:py-12">
           <div className="flex flex-col w-full items-center p-4 sm:p-8 lg:p-16 gap-4 md:gap-12 max-w-[1200px]">
-            <h2 className={`${bevan.className} text-3xl sm:text-6xl lg:text-8xl text-[#F7BE41] text-center`}>
+            <h2 className={`${bevan.className} text-3xl sm:text-6xl lg:text-8xl text-[#FFBF00] text-center`}>
               HOWDY Y&apos;ALL!
             </h2>
             <p className="text-white text-center text-sm sm:text-xl lg:text-2xl">
@@ -235,7 +239,7 @@ export default function Home() {
           </div>
           <div className="flex flex-col gap-16 md:gap-12 lg:gap-4 w-full">
             <div className="flex flex-col w-full items-center p-4 sm:p-8 lg:p-16 gap-4 md:gap-8 max-w-[1200px] -mt-14 md:-mt-28">
-              <h3 className={`${bevan.className} text-xl sm:text-2xl md:text-3xl lg:text-5xl text-[#F7BE41] text-center`}>
+              <h3 className={`${bevan.className} text-xl sm:text-2xl md:text-3xl lg:text-5xl text-[#FFBF00] text-center`}>
                 HOW TO PARTICIPATE
               </h3>
               <p className="text-white text-center text-sm sm:text-xl lg:text-2xl">
@@ -243,7 +247,6 @@ export default function Home() {
                 <br />
                 <br />
                 After you sign up, you will receive a confirmation email letting you know you&apos;re good to go. You can either form a team yourself, or you find one during the team building portion right before the competition! This phase is designed for forming well-rounded teams that bring together diverse strengths and perspectives.
-
                 <br />
                 <br />
                 <span className="text-xs sm:text-lg lg:text-xl italic">
@@ -252,34 +255,34 @@ export default function Home() {
               </p>
             </div>
             <div className="flex flex-col w-full items-center p-4 sm:p-8 lg:p-16 gap-4 md:gap-8 max-w-[1200px] -mt-14">
-              <h3 className={`${bevan.className} text-xl sm:text-2xl md:text-3xl lg:text-5xl text-[#F7BE41] text-center`}>
+              <h3 className={`${bevan.className} text-xl sm:text-2xl md:text-3xl lg:text-5xl text-[#FFBF00] text-center`}>
                 PARKING
               </h3>
               <p className="text-white text-center text-sm sm:text-xl lg:text-2xl">
                 Parking will be available at&nbsp;
                 <CircleLink>
-                  <Link href="https://maps.app.goo.gl/ceQELiAUQKdrBqqc6" target="_blank" rel="noopener noreferrer" className="text-[#F7BE41]">
+                  <Link href="https://maps.app.goo.gl/ceQELiAUQKdrBqqc6" target="_blank" rel="noopener noreferrer" className="text-[#FFBF00]">
                     Lot 100t
                   </Link>
                 </CircleLink>,&nbsp;
                 <CircleLink>
-                  <Link href="https://maps.app.goo.gl/9LnkaYUdw7PFyR5o6" target="_blank" rel="noopener noreferrer" className="text-[#F7BE41]">
+                  <Link href="https://maps.app.goo.gl/9LnkaYUdw7PFyR5o6" target="_blank" rel="noopener noreferrer" className="text-[#FFBF00]">
                     Lot 74
                   </Link>
                 </CircleLink> and <CircleLink>
-                  <Link href="https://maps.app.goo.gl/cpA6zPJW3i6d3VtP7" target="_blank" rel="noopener noreferrer" className="text-[#F7BE41]">
+                  <Link href="https://maps.app.goo.gl/cpA6zPJW3i6d3VtP7" target="_blank" rel="noopener noreferrer" className="text-[#FFBF00]">
                     Lot 97
                   </Link>
                 </CircleLink>. These lots are available for free parking during the event, no permit required. Please note that you cannot park in numbered spots, timed parking spaces, or university business or service spaces.
               </p>
             </div>
             <div className="flex flex-col w-full items-center p-4 sm:p-8 lg:p-16 gap-4 md:gap-8 max-w-[1200px] -mt-14">
-              <h3 className={`${bevan.className} text-xl sm:text-2xl md:text-3xl lg:text-5xl text-[#F7BE41] text-center`}>
+              <h3 className={`${bevan.className} text-xl sm:text-2xl md:text-3xl lg:text-5xl text-[#FFBF00] text-center`}>
                 PLAGIARISM
               </h3>
               <p className="text-white text-center text-sm sm:text-xl lg:text-2xl">
                 All projects must be original and created during the hackathon. Any team found to be in violation of this rule will be disqualified from the competition.
-                Use of AI such as ChatGPT or Copilot is completely fine. Your code base should no more than ~30% reused from existing projects on GitHub, Kaggle, etc.
+                Use of AI such as ChatGPT or Copilot is completely fine. Your codebase should no more than ~30% reused from existing projects on GitHub, Kaggle, etc.
               </p>
             </div>
           </div>
@@ -384,12 +387,111 @@ export default function Home() {
         <div className="bg-side-border w-[20px] md:w-[80px] z-10" />
       </div>
       <div className="bg-landing-top aspect-[905/46] h-[20px] md:h-[80px] z-20 w-full shadow-lg" />
-      <div id="construction" className="flex z-10 w-full max-w-[1200px] h-full">
-        <div className="bg-side-border w-[20px] md:w-[80px] z-10 h-72" />
-        <div className="bg-[#1b0000] w-full p-8 sm:p-12 lg:p-32 flex justify-center items-center h-72">
-          <p className="text-white text-center text-xl md:text-4xl">The FAQ section is under construction!<br />Check back later for more details 🤠</p>
+      <div id="faq" className="flex z-10 w-full max-w-[1200px] h-full">
+        <div className="bg-side-border w-[20px] md:w-[80px] z-10 h-72" style={{ height: faqBackgroundHeight }} />
+        <div className="bg-faq bg-cover bg-repeat w-full flex-col flex items-center relative gap-6 py-8 md:py-16">
+          <h2 className={`${bevan.className} text-3xl sm:text-6xl lg:text-8xl text-[#FFBF00] text-center`}>
+            FAQ
+          </h2>
+          <div className="flex flex-col w-full">
+            <div className="w-2/5 flex justify-end">
+              <Image src={plant} alt="Plant" className="w-[17%] -mb-[10%] mr-[4%] z-10" />
+            </div>
+            <div className="w-2/5 h-8 sm:h-16 lg:h-20 border-b-8 bg-[#230505] border-[#150403]" />
+          </div>
+          <div className="flex md:hidden flex-col gap-4 px-4 md:px-8 text-center sm:w-3/5">
+            <div className="bg-classic-frame bg-contain bg-no-repeat aspect-[574/660] flex flex-col px-[20%] py-[25%] gap-1 lg:gap-4 w-full justify-center">
+              <h3 className="min-[425px]:text-xl lg:text-3xl font-bold">Who can attend?</h3>
+              <p className="text-sm min-[425px]:text-base lg:text-xl">Any Texas A&M graduate / undergraduate student who is at least 18. Regardless of your experience, education, or background, as long as you are excited about learning, building, and having fun, we&apos;d love for you to attend.</p>
+            </div>
+            <div className="bg-purple-frame bg-contain bg-no-repeat aspect-[435/555] flex flex-col px-[20%] py-[22%] gap-1 lg:gap-4 w-full justify-center">
+              <h3 className="min-[425px]:text-xl lg:text-3xl font-bold">When is the deadline to apply?</h3>
+              <p className="text-sm min-[425px]:text-base lg:text-xl">The deadline for registration is September 22, at 11:59 PM. Applications are considered on a rolling basis, so please try to apply early!</p>
+            </div>
+            <div className="bg-pink-frame bg-contain bg-no-repeat aspect-[624/802] flex flex-col px-[16%] py-[12%] gap-1 lg:gap-4 w-full justify-center">
+              <h3 className="min-[425px]:text-xl lg:text-3xl font-bold">How much experience do I need?</h3>
+              <p className="text-sm min-[425px]:text-base lg:text-xl">Absolutely zero! We want you here because you have a passion for creating, not because you&apos;re the most experienced hacker on the block. We&apos;ll have lots of resources including workshops and a bunch of mentors to help beginners get started. There&apos;ll also be plenty of people to learn from and help out!</p>
+            </div>
+            <div className="bg-classic-frame bg-contain bg-no-repeat aspect-[574/660] flex flex-col px-[20%] py-[25%] gap-1 lg:gap-4 w-full justify-center">
+              <h3 className="min-[425px]:text-xl lg:text-3xl font-bold">What should I bring?</h3>
+              <p className="text-sm min-[425px]:text-base lg:text-xl">Please bring a valid student ID in addition to anything that would help you with creating your hack or making you comfortable. Don&apos;t bring anything you wouldn&apos;t bring on an airplane.</p>
+            </div>
+            <div className="bg-brown-frame bg-contain bg-no-repeat aspect-[396/696] flex flex-col pl-[24%] pr-[20%] py-[15%] gap-1 lg:gap-4 w-full justify-center">
+              <h3 className="lg:text-3xl font-bold">Do I have to stay at the MSC the entire time?</h3>
+              <p className="text-sm min-[425px]:text-base lg:text-xl mb-3">No, but you must be present at check-in and the awards ceremony with your team to receive prizes. Extenuating circumstances will be considered on a case-by-case basis.</p>
+              <h3 className="min-[425px]:text-xl lg:text-3xl font-bold">How much does it cost?</h3>
+              <p className="text-sm min-[425px]:text-base lg:text-xl">Nothing. Nada. Zilch. It&apos;s completely free for all accepted hackers. To make it even better, we&apos;ll be giving out a ton of swag to every in-person hacker, and prizes to our winners.</p>
+            </div>
+            <div className="bg-purple-frame bg-contain bg-no-repeat aspect-[435/555] flex flex-col px-[20%] py-[22%] gap-1 lg:gap-4 w-full justify-center">
+              <h3 className="min-[425px]:text-xl lg:text-3xl font-bold">How do teams work?</h3>
+              <p className="text-sm min-[425px]:text-base lg:text-xl">Teams are limited to 4 hackers. You don&apos;t need to have a team before the event or have one at all, but hacking with friends is more fun! There will be plenty of time after the opening ceremony to form teams if you don&apos;t have one yet.</p>
+            </div>
+            <div className="bg-pink-frame bg-contain bg-no-repeat aspect-[624/802] flex flex-col px-[16%] py-[12%] gap-1 lg:gap-4 w-full justify-center">
+              <h3 className="min-[425px]:text-xl lg:text-3xl font-bold">Will there be workshops or talks?</h3>
+              <p className="text-sm min-[425px]:text-base lg:text-xl mb-3">Of course! We will have workshops running throughout the whole event. We will release the complete schedule on the website closer to the event.</p>
+              <h3 className="min-[425px]:text-xl lg:text-3xl font-bold">Have additional questions?</h3>
+              <p className="text-sm min-[425px]:text-base lg:text-xl">Email us with any questions, comments, concerns at{' '}
+                <CircleLink>
+                  <Link href="mailto:hello@tamuhack.com" target="_blank" rel="noopener noreferrer" className="underline">
+                    hello@tamhuhack.com
+                  </Link>
+                </CircleLink>
+                .</p>
+            </div>
+          </div>
+
+          <div className="hidden md:flex w-full gap-4 lg:gap-8 px-4 md:px-8 text-[#1b0000] text-center">
+            <div className="flex flex-col w-1/2 gap-4">
+              <div className="bg-classic-frame bg-contain bg-no-repeat aspect-[574/660] flex flex-col px-[20%] py-[25%] gap-1 lg:gap-4 w-full justify-center">
+                <h3 className="lg:text-2xl min-[1440px]:text-3xl font-bold">Who can attend?</h3>
+                <p className="text-sm lg:text-xl">Any Texas A&M graduate / undergraduate student who is at least 18. Regardless of your experience, education, or background, as long as you are excited about learning, building, and having fun, we&apos;d love for you to attend.</p>
+              </div>
+              <div className="bg-pink-frame bg-contain bg-no-repeat aspect-[624/802] flex flex-col px-[16%] py-[12%] gap-1 lg:gap-4 w-full justify-center">
+                <h3 className="lg:text-2xl min-[1440px]:text-3xl font-bold">How much experience do I need?</h3>
+                <p className="text-sm lg:text-xl">Absolutely zero! We want you here because you have a passion for creating, not because you&apos;re the most experienced hacker on the block. We&apos;ll have lots of resources including workshops and a bunch of mentors to help beginners get started. There&apos;ll also be plenty of people to learn from and help out!</p>
+              </div>
+              <div className="bg-purple-frame bg-contain bg-no-repeat aspect-[435/555] flex flex-col px-[20%] py-[22%] gap-1 lg:gap-4 w-full justify-center">
+                <h3 className="lg:text-2xl min-[1440px]:text-3xl font-bold">How do teams work?</h3>
+                <p className="text-sm lg:text-xl">Teams are limited to 4 hackers. You don&apos;t need to have a team before the event or have one at all, but hacking with friends is more fun! There will be plenty of time after the opening ceremony to form teams if you don&apos;t have one yet.</p>
+              </div>
+              <div className="bg-pink-frame bg-contain bg-no-repeat aspect-[624/802] flex flex-col px-[16%] py-[12%] gap-1 lg:gap-4 w-full justify-center">
+                <h3 className="lg:text-2xl min-[1440px]:text-3xl font-bold">Will there be workshops or talks?</h3>
+                <p className="text-sm lg:text-xl mb-3">Of course! We will have workshops running throughout the whole event. We will release the complete schedule on the website closer to the event.</p>
+                <h3 className="lg:text-2xl min-[1440px]:text-3xl font-bold">Have additional questions?</h3>
+                <p className="text-sm lg:text-xl">Email us with any questions, comments, concerns at{' '}
+                  <CircleLink>
+                    <Link href="mailto:hello@tamuhack.com" target="_blank" rel="noopener noreferrer" className="underline">
+                      hello@tamhuhack.com
+                    </Link>
+                  </CircleLink>
+                  .</p>
+              </div>
+            </div>
+            <div className="flex flex-col w-1/2 gap-4 -mt-24">
+              <div className="bg-purple-frame bg-contain bg-no-repeat aspect-[435/555] flex flex-col px-[20%] py-[22%] gap-1 lg:gap-4 w-full justify-center">
+                <h3 className="lg:text-2xl min-[1440px]:text-3xl font-bold">When is the deadline to apply?</h3>
+                <p className="text-sm lg:text-xl">The deadline for registration is September 22, at 11:59 PM. Applications are considered on a rolling basis, so please try to apply early!</p>
+              </div>
+              <div className="bg-brown-frame bg-contain bg-no-repeat aspect-[396/696] flex flex-col pl-[24%] pr-[20%] py-[15%] gap-1 lg:gap-4 w-full justify-center">
+                <h3 className="lg:text-2xl min-[1440px]:text-3xl font-bold">Do I have to stay at the MSC the entire time?</h3>
+                <p className="text-sm lg:text-xl mb-3">No, but you must be present at check-in and the awards ceremony with your team to receive prizes. Extenuating circumstances will be considered on a case-by-case basis.</p>
+                <h3 className="lg:text-2xl min-[1440px]:text-3xl font-bold">How much does it cost?</h3>
+                <p className="text-sm lg:text-xl">Nothing. Nada. Zilch. It&apos;s completely free for all accepted hackers. To make it even better, we&apos;ll be giving out a ton of swag to every in-person hacker, and prizes to our winners.</p>
+              </div>
+              <div className="bg-classic-frame bg-contain bg-no-repeat aspect-[574/660] flex flex-col px-[20%] py-[25%] gap-1 lg:gap-4 w-full justify-center">
+                <h3 className="lg:text-2xl min-[1440px]:text-3xl font-bold">What should I bring?</h3>
+                <p className="text-sm lg:text-xl">Please bring a valid student ID in addition to anything that would help you with creating your hack or making you comfortable. Don&apos;t bring anything you wouldn&apos;t bring on an airplane.</p>
+              </div>
+            </div>
+          </div>
+          <div className="flex flex-col w-full items-end md:-mt-48 md:mb-24">
+            <div className="w-2/5 flex">
+              <Image src={mouse} alt="Mouse" className="w-[40%] -mb-[8%] mr-[4%] z-10" />
+            </div>
+            <div className="w-2/5 h-8 sm:h-16 lg:h-20 border-b-8 bg-[#230505] border-[#150403]" />
+          </div>
         </div>
-        <div className="bg-side-border w-[20px] md:w-[80px] z-10 h-72" />
+        <div className="bg-side-border w-[20px] md:w-[80px] z-10 h-72" style={{ height: faqBackgroundHeight }} />
       </div>
       <div className="bg-landing-top aspect-[905/46] h-[20px] md:h-[80px] z-20 w-full shadow-lg" />
       <div className="w-full max-w-[1200px] h-full">
@@ -413,7 +515,7 @@ export default function Home() {
                 type="text"
                 name="EMAIL"
                 placeholder="Enter your email address"
-                className="2xl:w-96 w-64 px-4 py-2 rounded-lg bg-[rgba(217,217,217,0.09)] border dark:placeholder:text-[rgba(255,191,0,0.6)]"
+                className="2xl:w-96 w-64 px-4 py-2 rounded-lg bg-[rgba(217,217,217,0.09)] border border-[#FFBF00] dark:placeholder:text-[rgba(255,191,0,0.6)]"
                 id="mce-EMAIL"
               />
               <button className="clear">
@@ -422,7 +524,7 @@ export default function Home() {
                   value="Subscribe"
                   name="subscribe"
                   id="mc-embedded-subscribe"
-                  className="h-full px-4 py-2 rounded-lg transition-colors duration-200 border text-base font-bold cursor-pointer hover:bg-[#FFBF00] hover:text-[#1b0000]"
+                  className="h-full px-4 py-2 rounded-lg transition-colors duration-200 border border-[#FFBF00] text-base font-bold cursor-pointer hover:bg-[#FFBF00] hover:text-[#1b0000]"
                 />
               </button>
             </div>
