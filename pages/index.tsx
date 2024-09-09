@@ -197,7 +197,7 @@ export default function Home() {
       <div className="bg-landing-top aspect-[905/46] h-[20px] md:h-[80px] z-20 w-full shadow-lg" />
       <div id="about" className="flex z-10 w-full max-w-[1200px] h-full">
         <div className="bg-side-border bg-repeat w-[20px] md:w-[80px] z-10" style={{ height: genInfoBackgroundHeight }} />
-        <div id="gen-info" className="flex flex-col bg-gen-info bg-contain aspect-[2160/2683] w-full h-fit py-2 sm:py-4 lg:py-12">
+        <div id="gen-info" className="flex flex-col bg-gen-info bg-cover aspect-[2160/2700] w-full h-fit py-2 sm:py-4 lg:py-12">
           <div className="flex flex-col w-full items-center p-4 sm:p-8 lg:p-16 gap-4 md:gap-12 max-w-[1200px]">
             <h2 className={`${bevan.className} text-3xl sm:text-6xl lg:text-8xl text-[#F7BE41] text-center`}>
               HOWDY Y&apos;ALL!
@@ -273,6 +273,15 @@ export default function Home() {
                 </CircleLink>. These lots are available for free parking during the event, no permit required. Please note that you cannot park in numbered spots, timed parking spaces, or university business or service spaces.
               </p>
             </div>
+            <div className="flex flex-col w-full items-center p-4 sm:p-8 lg:p-16 gap-4 md:gap-8 max-w-[1200px] -mt-14">
+              <h3 className={`${bevan.className} text-xl sm:text-2xl md:text-3xl lg:text-5xl text-[#F7BE41] text-center`}>
+                PLAGIARISM
+              </h3>
+              <p className="text-white text-center text-sm sm:text-xl lg:text-2xl">
+                All projects must be original and created during the hackathon. Any team found to be in violation of this rule will be disqualified from the competition.
+                Use of AI such as ChatGPT or Copilot is completely fine. Your code base should no more than ~30% reused from existing projects on GitHub, Kaggle, etc.
+              </p>
+            </div>
           </div>
         </div>
         <div className="bg-side-border w-[20px] md:w-[80px] z-10" style={{ height: genInfoBackgroundHeight }} />
@@ -320,6 +329,9 @@ export default function Home() {
             <div className="hidden lg:flex h-full items-center w-[10%]">
               <Image src={postersRight} alt="Posters" className="" />
             </div>
+          </div>
+          <div className={`${koulen.className} flex`}>
+            <p className="text-[rgba(255,255,255,0.5)] pb-4 sm:pb-8 italic sm:text-lg">Note: Schedule is subject to change</p>
           </div>
           <Image src={table} alt="Table" className="w-full -mb-1" />
           <Image src={chairs} alt="Chairs" className="absolute bottom-0 w-4/5" />
