@@ -402,7 +402,7 @@ export default function Home() {
           <div className="flex md:hidden flex-col gap-4 px-4 md:px-8 text-center sm:w-3/5">
             <div className="bg-classic-frame bg-contain bg-no-repeat aspect-[574/660] flex flex-col px-[20%] py-[25%] gap-1 lg:gap-4 w-full justify-center">
               <h3 className="min-[425px]:text-xl lg:text-3xl font-bold">Who can attend?</h3>
-              <p className="text-sm min-[425px]:text-base lg:text-xl">Any Texas A&M graduate / undergraduate student who is at least 18. Regardless of your experience, education, or background, as long as you are excited about learning, building, and having fun, we'd love for you to attend.</p>
+              <p className="text-sm min-[425px]:text-base lg:text-xl">Any Texas A&M graduate / undergraduate student who is at least 18. Regardless of your experience, education, or background, as long as you are excited about learning, building, and having fun, we&apos;d love for you to attend.</p>
             </div>
             <div className="bg-purple-frame bg-contain bg-no-repeat aspect-[435/555] flex flex-col px-[20%] py-[22%] gap-1 lg:gap-4 w-full justify-center">
               <h3 className="min-[425px]:text-xl lg:text-3xl font-bold">When is the deadline to apply?</h3>
@@ -410,21 +410,21 @@ export default function Home() {
             </div>
             <div className="bg-pink-frame bg-contain bg-no-repeat aspect-[624/802] flex flex-col px-[16%] py-[12%] gap-1 lg:gap-4 w-full justify-center">
               <h3 className="min-[425px]:text-xl lg:text-3xl font-bold">How much experience do I need?</h3>
-              <p className="text-sm min-[425px]:text-base lg:text-xl">Absolutely zero! We want you here because you have a passion for creating, not because you're the most experienced hacker on the block. We'll have lots of resources including workshops and a bunch of mentors to help beginners get started. There'll also be plenty of people to learn from and help out!</p>
+              <p className="text-sm min-[425px]:text-base lg:text-xl">Absolutely zero! We want you here because you have a passion for creating, not because you&apos;re the most experienced hacker on the block. We&apos;ll have lots of resources including workshops and a bunch of mentors to help beginners get started. There&apos;ll also be plenty of people to learn from and help out!</p>
             </div>
             <div className="bg-classic-frame bg-contain bg-no-repeat aspect-[574/660] flex flex-col px-[20%] py-[25%] gap-1 lg:gap-4 w-full justify-center">
               <h3 className="min-[425px]:text-xl lg:text-3xl font-bold">What should I bring?</h3>
-              <p className="text-sm min-[425px]:text-base lg:text-xl">Please bring a valid student ID in addition to anything that would help you with creating your hack or making you comfortable. Don't bring anything you wouldn't bring on an airplane.</p>
+              <p className="text-sm min-[425px]:text-base lg:text-xl">Please bring a valid student ID in addition to anything that would help you with creating your hack or making you comfortable. Don&apos;t bring anything you wouldn&apos;t bring on an airplane.</p>
             </div>
             <div className="bg-brown-frame bg-contain bg-no-repeat aspect-[396/696] flex flex-col pl-[24%] pr-[20%] py-[15%] gap-1 lg:gap-4 w-full justify-center">
               <h3 className="lg:text-3xl font-bold">Do I have to stay at the MSC the entire time?</h3>
               <p className="text-sm min-[425px]:text-base lg:text-xl mb-3">No, but you must be present at check-in and the awards ceremony with your team to receive prizes. Extenuating circumstances will be considered on a case-by-case basis.</p>
               <h3 className="min-[425px]:text-xl lg:text-3xl font-bold">How much does it cost?</h3>
-              <p className="text-sm min-[425px]:text-base lg:text-xl">Nothing. Nada. Zilch. It's completely free for all accepted hackers. To make it even better, we'll be giving out a ton of swag to every in-person hacker, and prizes to our winners.</p>
+              <p className="text-sm min-[425px]:text-base lg:text-xl">Nothing. Nada. Zilch. It&apos;s completely free for all accepted hackers. To make it even better, we&apos;ll be giving out a ton of swag to every in-person hacker, and prizes to our winners.</p>
             </div>
             <div className="bg-purple-frame bg-contain bg-no-repeat aspect-[435/555] flex flex-col px-[20%] py-[22%] gap-1 lg:gap-4 w-full justify-center">
               <h3 className="min-[425px]:text-xl lg:text-3xl font-bold">How do teams work?</h3>
-              <p className="text-sm min-[425px]:text-base lg:text-xl">Teams are limited to 4 hackers. You don't need to have a team before the event or have one at all, but hacking with friends is more fun! There will be plenty of time after the opening ceremony to form teams if you don't have one yet.</p>
+              <p className="text-sm min-[425px]:text-base lg:text-xl">Teams are limited to 4 hackers. You don&apos;t need to have a team before the event or have one at all, but hacking with friends is more fun! There will be plenty of time after the opening ceremony to form teams if you don&apos;t have one yet.</p>
             </div>
             <div className="bg-pink-frame bg-contain bg-no-repeat aspect-[624/802] flex flex-col px-[16%] py-[12%] gap-1 lg:gap-4 w-full justify-center">
               <h3 className="min-[425px]:text-xl lg:text-3xl font-bold">Will there be workshops or talks?</h3>
@@ -444,15 +444,15 @@ export default function Home() {
             <div className="flex flex-col w-1/2 gap-4">
               <div className="bg-classic-frame bg-contain bg-no-repeat aspect-[574/660] flex flex-col px-[20%] py-[25%] gap-1 lg:gap-4 w-full justify-center">
                 <h3 className="lg:text-2xl min-[1440px]:text-3xl font-bold">Who can attend?</h3>
-                <p className="text-sm lg:text-xl">Any Texas A&M graduate / undergraduate student who is at least 18. Regardless of your experience, education, or background, as long as you are excited about learning, building, and having fun, we'd love for you to attend.</p>
+                <p className="text-sm lg:text-xl">Any Texas A&M graduate / undergraduate student who is at least 18. Regardless of your experience, education, or background, as long as you are excited about learning, building, and having fun, we&apos;d love for you to attend.</p>
               </div>
               <div className="bg-pink-frame bg-contain bg-no-repeat aspect-[624/802] flex flex-col px-[16%] py-[12%] gap-1 lg:gap-4 w-full justify-center">
                 <h3 className="lg:text-2xl min-[1440px]:text-3xl font-bold">How much experience do I need?</h3>
-                <p className="text-sm lg:text-xl">Absolutely zero! We want you here because you have a passion for creating, not because you're the most experienced hacker on the block. We'll have lots of resources including workshops and a bunch of mentors to help beginners get started. There'll also be plenty of people to learn from and help out!</p>
+                <p className="text-sm lg:text-xl">Absolutely zero! We want you here because you have a passion for creating, not because you&apos;re the most experienced hacker on the block. We&apos;ll have lots of resources including workshops and a bunch of mentors to help beginners get started. There&apos;ll also be plenty of people to learn from and help out!</p>
               </div>
               <div className="bg-purple-frame bg-contain bg-no-repeat aspect-[435/555] flex flex-col px-[20%] py-[22%] gap-1 lg:gap-4 w-full justify-center">
                 <h3 className="lg:text-2xl min-[1440px]:text-3xl font-bold">How do teams work?</h3>
-                <p className="text-sm lg:text-xl">Teams are limited to 4 hackers. You don't need to have a team before the event or have one at all, but hacking with friends is more fun! There will be plenty of time after the opening ceremony to form teams if you don't have one yet.</p>
+                <p className="text-sm lg:text-xl">Teams are limited to 4 hackers. You don&apos;t need to have a team before the event or have one at all, but hacking with friends is more fun! There will be plenty of time after the opening ceremony to form teams if you don&apos;t have one yet.</p>
               </div>
               <div className="bg-pink-frame bg-contain bg-no-repeat aspect-[624/802] flex flex-col px-[16%] py-[12%] gap-1 lg:gap-4 w-full justify-center">
                 <h3 className="lg:text-2xl min-[1440px]:text-3xl font-bold">Will there be workshops or talks?</h3>
@@ -476,11 +476,11 @@ export default function Home() {
                 <h3 className="lg:text-2xl min-[1440px]:text-3xl font-bold">Do I have to stay at the MSC the entire time?</h3>
                 <p className="text-sm lg:text-xl mb-3">No, but you must be present at check-in and the awards ceremony with your team to receive prizes. Extenuating circumstances will be considered on a case-by-case basis.</p>
                 <h3 className="lg:text-2xl min-[1440px]:text-3xl font-bold">How much does it cost?</h3>
-                <p className="text-sm lg:text-xl">Nothing. Nada. Zilch. It's completely free for all accepted hackers. To make it even better, we'll be giving out a ton of swag to every in-person hacker, and prizes to our winners.</p>
+                <p className="text-sm lg:text-xl">Nothing. Nada. Zilch. It&apos;s completely free for all accepted hackers. To make it even better, we&apos;ll be giving out a ton of swag to every in-person hacker, and prizes to our winners.</p>
               </div>
               <div className="bg-classic-frame bg-contain bg-no-repeat aspect-[574/660] flex flex-col px-[20%] py-[25%] gap-1 lg:gap-4 w-full justify-center">
                 <h3 className="lg:text-2xl min-[1440px]:text-3xl font-bold">What should I bring?</h3>
-                <p className="text-sm lg:text-xl">Please bring a valid student ID in addition to anything that would help you with creating your hack or making you comfortable. Don't bring anything you wouldn't bring on an airplane.</p>
+                <p className="text-sm lg:text-xl">Please bring a valid student ID in addition to anything that would help you with creating your hack or making you comfortable. Don&apos;t bring anything you wouldn&apos;t bring on an airplane.</p>
               </div>
             </div>
           </div>
