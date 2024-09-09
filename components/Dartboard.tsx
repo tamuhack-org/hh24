@@ -132,7 +132,7 @@ const Dartboard = ({ mouseOverIndex, setMouseOverIndex }: DartboardProps) => {
   return (
     <div id="dartboard" className="flex w-full">
       {/* Huge thank you to djave for this brilliant free-to-use SVG dartboard! http://djave.co.uk/free-svg-dartboard/ */}
-      <svg id="dartboard" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 787 774" enable-background="new 0 0 787 774" xmlSpace="preserve">
+      <svg id="dartboard" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 787 774" enableBackground="new 0 0 787 774" xmlSpace="preserve">
         <g id="areas">
           <g id="s">
             {dartboardGroups.map((group, i) => (

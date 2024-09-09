@@ -330,7 +330,7 @@ export default function Home() {
       <div id="prizes" className="flex z-10 w-full max-w-[1200px] h-full">
         <div className="bg-side-border w-[20px] md:w-[80px] z-10" />
         <div className="bg-prizes bg-cover w-full flex-col flex items-center relative gap-4 px-4 md:px-8 py-8 md:py-16">
-          <div className="bg-prizes-title bg-cover aspect-[2007/635] bg-no-repeat flex w-fit justify-center items-center px-[4%] pt-[7%] pb-[3%]">
+          <div className="bg-prizes-title bg-contain aspect-[2007/635] bg-no-repeat flex w-fit justify-center items-center px-[15%] pt-[6%] pb-[1%]">
             <h2 className={`${bevan.className} text-3xl sm:text-6xl lg:text-6xl text-[#ba917c] text-center`}>PRIZES</h2>
           </div>
           <div className="flex w-full items-center gap-4">
