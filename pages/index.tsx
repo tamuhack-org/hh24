@@ -121,7 +121,19 @@ export default function Home() {
   const [mouseOverIndex, setMouseOverIndex] = useState(-1);
   const [backgroundFadeInDelay, setBackgroundFadeInDelay] = useState(true);
   const [mouseHovered, setMouseHovered] = useState(false);
+  const [mouseScuttling, setMouseScuttling] = useState(false);
   const windowWidth = useWindowWidth();
+
+  // set mouseScuttling to true after 1 second only if mouseHovered is true
+  useEffect(() => {
+    if (!mouseHovered) return;
+
+    const timeout = setTimeout(() => {
+      setMouseScuttling(true);
+    }, 1000);
+
+    return () => clearTimeout(timeout);
+  }, [mouseHovered]);
 
   useEffect(() => {
     if (!backgroundFadeInDelay) return;
@@ -499,8 +511,9 @@ export default function Home() {
           </div>
           <div className="flex flex-col w-full items-end md:-mt-48 md:mb-24">
             <div className="w-2/5 flex">
-              <Image src={mouse} alt="Mouse" className={`w-[40%] -mb-[12%] mr-[4%] z-10 ${mouseHovered ? 'hidden' : 'block'}`} onMouseEnter={() => setMouseHovered(true)} />
-              <Image src={mouseStandingUp} alt="Mouse standing up" className={`${mouseHovered ? 'block' : 'hidden'} w-[40%] -mb-[12%] mr-[4%] z-10`} />
+              <Image src={mouse} alt="Mouse" className={`w-[40%] -mb-[12%] mr-[4%] z-10 ${mouseHovered ? 'hidden' : 'block'}`} onMouseEnter={() => setMouseHovered(true)} priority />
+              <Image src={mouseStandingUp} alt="Mouse standing up" className={`${!mouseHovered || mouseScuttling ? 'hidden' : 'block'} w-[40%] -mb-[12%] mr-[4%] z-10`} priority />
+              <Image src={mouseScuttle} alt="Mouse scuttling" className={`${mouseScuttling ? 'block move-right' : 'hidden'}  w-[40%] -mb-[12%] mr-[4%] z-10`} priority />
             </div>
             <div className="w-2/5 h-8 sm:h-16 lg:h-20 border-b-8 bg-[#230505] border-[#150403]" />
           </div>
