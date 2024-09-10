@@ -23,6 +23,8 @@ import revPlush from '../public/assets/prizes/rev-plush.png';
 import monitor from '../public/assets/prizes/monitor.png';
 import plant from '../public/assets/faq/plant.png';
 import mouse from '../public/assets/faq/mouse.png';
+import mouseStandingUp from '../public/assets/faq/mouse-stand.gif';
+import mouseScuttle from '../public/assets/faq/mouse-scuttle.gif';
 import CircleLink from "@/components/CircleLink";
 import ForegroundStatic from "@/components/ForegroundStatic";
 import { useEffect, useState } from "react";
@@ -118,6 +120,7 @@ export default function Home() {
   const [scheduleItems, setScheduleItems] = useState<ScheduleItem[]>();
   const [mouseOverIndex, setMouseOverIndex] = useState(-1);
   const [backgroundFadeInDelay, setBackgroundFadeInDelay] = useState(true);
+  const [mouseHovered, setMouseHovered] = useState(false);
   const windowWidth = useWindowWidth();
 
   useEffect(() => {
@@ -126,7 +129,7 @@ export default function Home() {
     setTimeout(() => {
       setBackgroundFadeInDelay(false);
     }
-    , 800);
+      , 800);
   }, [backgroundFadeInDelay]);
 
   useEffect(() => {
@@ -234,7 +237,7 @@ export default function Home() {
                 </p>
                 <FaArrowDown className="text-[#1b0000] text-sm sm:text-base md:text-xl lg:text-4xl -mb-1 sm:-mb-3 lg:-mb-6" />
                 <div className="nav-link text-center w-fit p-1 sm:p-3">
-                  <Link href="/assets/msc-map.png" target="_blank" rel="noopener noreferrer" className="text-xs sm:text-base md:text-lg lg:text-3xl text-[#1b0000] text-center" >
+                  <Link href="/assets/msc-map.jpg" target="_blank" rel="noopener noreferrer" className="text-xs sm:text-base md:text-lg lg:text-3xl text-[#1b0000] text-center" >
                     Building Map
                   </Link>
                   <svg viewBox="0 0 500 150" preserveAspectRatio="none">
@@ -443,7 +446,7 @@ export default function Home() {
               <p className="text-sm min-[425px]:text-base lg:text-xl">Email us with any questions, comments, concerns at{' '}
                 <CircleLink>
                   <Link href="mailto:hello@tamuhack.com" target="_blank" rel="noopener noreferrer" className="underline">
-                    hello@tamhuhack.com
+                    hello@tamuhack.com
                   </Link>
                 </CircleLink>
                 .</p>
@@ -471,7 +474,7 @@ export default function Home() {
                 <p className="text-sm lg:text-xl">Email us with any questions, comments, concerns at{' '}
                   <CircleLink>
                     <Link href="mailto:hello@tamuhack.com" target="_blank" rel="noopener noreferrer" className="underline">
-                      hello@tamhuhack.com
+                      hello@tamuhack.com
                     </Link>
                   </CircleLink>
                   .</p>
@@ -496,7 +499,8 @@ export default function Home() {
           </div>
           <div className="flex flex-col w-full items-end md:-mt-48 md:mb-24">
             <div className="w-2/5 flex">
-              <Image src={mouse} alt="Mouse" className="w-[40%] -mb-[8%] mr-[4%] z-10" />
+              <Image src={mouse} alt="Mouse" className={`w-[40%] -mb-[12%] mr-[4%] z-10 ${mouseHovered ? 'hidden' : 'block'}`} onMouseEnter={() => setMouseHovered(true)} />
+              <Image src={mouseStandingUp} alt="Mouse standing up" className={`${mouseHovered ? 'block' : 'hidden'} w-[40%] -mb-[12%] mr-[4%] z-10`} />
             </div>
             <div className="w-2/5 h-8 sm:h-16 lg:h-20 border-b-8 bg-[#230505] border-[#150403]" />
           </div>
