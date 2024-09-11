@@ -6,7 +6,7 @@ import rev from "../public/assets/landing/rev.png";
 import logo from "../public/assets/landing/hh24-logo.png";
 import genInfoTable from "../public/assets/gen-info/table.png";
 import genInfoPapers from "../public/assets/gen-info/papers.png";
-import genInfoCandles from "../public/assets/gen-info/candles.png";
+import genInfoCandles from "../public/assets/gen-info/candles.gif";
 import genInfoCoins from "../public/assets/gen-info/coins.png";
 import genInfoPrints from "../public/assets/gen-info/prints.png";
 import scheduleTitle from "../public/assets/schedule/title.png";
@@ -258,7 +258,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <Image src={genInfoCandles} alt="HowdyHack 2024 General Information Candles" className="absolute right-0 top-2 w-1/3" style={{ filter: 'drop-shadow(5px 1px 2px #000)' }} />
+            <Image src={genInfoCandles} alt="HowdyHack 2024 General Information Candles" className="absolute right-0 -top-2 w-[35%]" style={{ filter: 'drop-shadow(5px 1px 2px #000)' }} />
             <Image src={genInfoCoins} alt="HowdyHack 2024 General Information Coins" className="absolute left-[4%] top-[8%] w-[10%]" style={{ filter: 'drop-shadow(5px 5px 2px #000)' }} />
             <Image src={genInfoPrints} alt="HowdyHack 2024 General Information Prints" className="absolute right-2 bottom-[40%] w-1/5" />
           </div>
