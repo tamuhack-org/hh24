@@ -150,9 +150,9 @@ const Dartboard = ({ mouseOverIndex, setMouseOverIndex }: DartboardProps) => {
 
   return (
     <div id="dartboard" className="flex w-full relative">
-      <div className="absolute top-[43.5%] left-[44.5%] pointer-events-none">
-        <Image src={first} alt="First" className="w-[57%] min-[1200px]:w-[70%]" />
-      </div>
+        {/* <div className="absolute top-[43.5%] left-[44.5%] pointer-events-none">
+          <Image src={first} alt="First" className="w-[57%] min-[1200px]:w-[70%]" />
+        </div> */}
       <div className="absolute top-[6%] left-[26%] pointer-events-none">
         <Image src={cowboy} alt="Wild West" className="w-[25%] min-[1200px]:w-[35%]" />
       </div>
