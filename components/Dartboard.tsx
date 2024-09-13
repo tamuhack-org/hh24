@@ -1,5 +1,15 @@
 import { useEffect, useRef, useState } from "react";
 import DartboardGroup from "./DartboardGroup";
+import { Caveat } from "next/font/google";
+import aggie from "../public/assets/prizes/aggie.png";
+import cowboy from "../public/assets/prizes/cowboy.png";
+import first from "../public/assets/prizes/first.png";
+import second from "../public/assets/prizes/second.png";
+import third from "../public/assets/prizes/third.png";
+import uiux from "../public/assets/prizes/uiux.png";
+import Image from "next/image";
+
+const caveat = Caveat({ subsets: ["latin"] });
 
 interface DartboardProps {
   mouseOverIndex: number;
@@ -130,7 +140,25 @@ const Dartboard = ({ mouseOverIndex, setMouseOverIndex }: DartboardProps) => {
   }, []);
 
   return (
-    <div id="dartboard" className="flex w-full">
+    <div id="dartboard" className="flex w-full relative">
+      <div className="absolute top-[43.5%] left-[44.5%] pointer-events-none">
+        <Image src={first} alt="First" className="w-[57%] min-[1200px]:w-[70%]" />
+      </div>
+      <div className="absolute top-[6%] left-[26%] pointer-events-none">
+        <Image src={cowboy} alt="Wild West" className="w-[25%] min-[1200px]:w-[35%]" />
+      </div>
+      <div className="absolute top-[14%] right-[3%] min-[1200px]:right-[7%] pointer-events-none">
+        <Image src={uiux} alt="UI/UX" className="w-[35%] min-[1200px]:w-[45%]" />
+      </div>
+      <div className="absolute bottom-[39%] left-[3%] pointer-events-none">
+        <Image src={third} alt="Third" className="w-[30%] min-[1200px]:w-[40%]" />
+      </div>
+      <div className="absolute bottom-[28%] -right-[12%] min-[1100px]:-right-[9%] min-[1200px]:-right-[7%] pointer-events-none">
+        <Image src={aggie} alt="Gig 'em!" className="w-[25%] min-[1200px]:w-[35%]" />
+      </div>
+      <div className="absolute bottom-[1%] left-[43%] pointer-events-none">
+        <Image src={second} alt="Second" className="w-[30%] min-[1200px]:w-[40%]" />
+      </div>
       {/* Huge thank you to djave for this brilliant free-to-use SVG dartboard! http://djave.co.uk/free-svg-dartboard/ */}
       <svg id="dartboard" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 787 774" enableBackground="new 0 0 787 774" xmlSpace="preserve">
         <g id="areas">
