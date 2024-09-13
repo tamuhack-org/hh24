@@ -8,6 +8,7 @@ import monitor from '../public/assets/prizes/monitor.png';
 
 interface DartboardGroupProps {
   children: React.ReactNode;
+  slideshowIndex: number;
   mouseOverIndex: number;
   setMouseOverIndex: (index: number) => void;
   index: number;
@@ -22,7 +23,7 @@ const images = [
   revPlush,
 ];
 
-const DartboardGroup = ({ children, mouseOverIndex, setMouseOverIndex, index, coverRef }: DartboardGroupProps) => {
+const DartboardGroup = ({ children, slideshowIndex, mouseOverIndex, setMouseOverIndex, index, coverRef }: DartboardGroupProps) => {
   const itemRef = useRef<SVGGElement | null>(null);
 
   useEffect(() => {
@@ -61,7 +62,7 @@ const DartboardGroup = ({ children, mouseOverIndex, setMouseOverIndex, index, co
   }, []);
 
   return (
-    <g ref={itemRef} className="dartboard-group group relative hidden md:block">
+    <g ref={itemRef} className={"dartboard-group group relative hidden md:block " + (mouseOverIndex === -1 ? (slideshowIndex === index ? "opacity-100" : "opacity-50") : "")}>
       {children}
       <g ref={coverRef} />
     </g>
