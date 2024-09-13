@@ -142,6 +142,7 @@ const Dartboard = ({ mouseOverIndex, setMouseOverIndex }: DartboardProps) => {
             ))}
           </g>
           <g ref={bullRef} id="bull" onMouseEnter={() => setMouseOverIndex(5)} onMouseLeave={() => setMouseOverIndex(-1)}>
+            <path id="Outer" fill="#f9f21d" stroke="#f9f21d" strokeWidth="20" className="blur-md animate-pulse" d="M432.438 389c0 17.087-13.852 30.938-30.938 30.938S370.562 406.1 370.6 389 s13.852-30.938 30.938-30.938S432.438 371.9 432.4 389z M401.5 372.602c-9.057 0-16.398 7.342-16.398 16.4 s7.342 16.4 16.4 16.398s16.398-7.342 16.398-16.398S410.557 372.6 401.5 372.602z" />
             <path id="Outer" fill="#2A5A30" stroke="#040000" strokeWidth="4" d="M432.438 389c0 17.087-13.852 30.938-30.938 30.938S370.562 406.1 370.6 389 s13.852-30.938 30.938-30.938S432.438 371.9 432.4 389z M401.5 372.602c-9.057 0-16.398 7.342-16.398 16.4 s7.342 16.4 16.4 16.398s16.398-7.342 16.398-16.398S410.557 372.6 401.5 372.602z" />
             <circle id="Bull" fill="#710000" stroke="#040000" strokeWidth="4" cx="401.5" cy="389" r="13.7" />
           </g>
