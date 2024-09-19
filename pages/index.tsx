@@ -325,30 +325,30 @@ export default function Home() {
               <Image src={postersLeft} alt="Posters" />
             </div>
             <div className="bg-blackboard aspect-[1954/4473] bg-cover bg-no-repeat w-full lg:w-[80%] h-fit text-[rgba(255,255,255,0.5)] text-xs sm:text-lg md:text-xl min-[1160px]:text-2xl px-[9%] pt-[28%] sm:pt-[28%] md:pt-[25%] lg:pt-[22%] pb-[5%] sm:pb-[20%] flex flex-col gap-3 sm:gap-4 md:gap-8 lg:gap-12">
-              <div className="flex flex-col gap-2 sm:gap-3 lg:gap-6 w-full">
-                <h3 className="w-full text-center text-lg sm:text-2xl lg:text-4xl">Saturday</h3>
+              <div className="flex flex-col max-[425px]:gap-1 gap-2 sm:gap-3 lg:gap-6 w-full">
+                <h3 className="w-full text-center max-[425px]:text-[12px] text-lg sm:text-2xl lg:text-4xl">Saturday</h3>
                 <div className="flex flex-col gap-1 sm:gap-2 lg:gap-3 min-[1160px]:gap-4">
                   {scheduleItems?.filter((item) => {
                     const temp = new Date(item.date);
                     return temp.getDay() === 6;
                   }).sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime()).map((item) => (
                     <div key={item.id} className="flex justify-between gap-2">
-                      <p className="text-left w-fit">{new Date(item.date).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })}</p>
-                      <p className=" text-right">{item.event_name}</p>
+                      <p className="max-[425px]:text-[10px] text-left w-fit">{new Date(item.date).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })}</p>
+                      <p className="max-[425px]:text-[10px] text-right">{item.event_name}</p>
                     </div>
                   ))}
                 </div>
               </div>
               <div className="flex flex-col gap-2 sm:gap-3 lg:gap-6 w-full">
-                <h3 className="w-full text-center text-lg sm:text-2xl lg:text-4xl">Sunday</h3>
+                <h3 className="w-full text-center max-[425px]:text-[12px] text-lg sm:text-2xl lg:text-4xl">Sunday</h3>
                 <div className="flex flex-col gap-1 sm:gap-2 lg:gap-3 min-[1160px]:gap-4">
                   {scheduleItems?.filter((item) => {
                     const temp = new Date(item.date);
                     return temp.getDay() === 0;
                   }).sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime()).map((item) => (
                     <div key={item.id} className="flex justify-between gap-2">
-                      <p className="text-left w-fit">{new Date(item.date).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })}</p>
-                      <p className=" text-right">{item.event_name}</p>
+                      <p className="max-[425px]:text-[10px] text-left w-fit">{new Date(item.date).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })}</p>
+                      <p className="max-[425px]:text-[10px] text-right">{item.event_name}</p>
                     </div>
                   ))}
                 </div>
