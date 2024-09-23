@@ -33,6 +33,7 @@ import Link from "next/link";
 import { FaArrowDown } from "react-icons/fa";
 import { resources, socials, workshops } from "@/data/constants";
 import Dartboard from "@/components/Dartboard";
+import { Tooltip } from "react-tooltip";
 
 const koulen = Koulen({ subsets: ["latin"], weight: "400" });
 const bevan = Bevan({ subsets: ["latin"], weight: "400" });
@@ -334,7 +335,13 @@ export default function Home() {
                   }).sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime()).map((item) => (
                     <div key={item.id} className="flex justify-between gap-2">
                       <p className="max-[425px]:text-[10px] text-left w-fit">{new Date(item.date).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })}</p>
-                      <p className="max-[425px]:text-[10px] text-right">{item.event_name}</p>
+                      {item.description !== "" ?
+                        <>
+                          <p className="max-[425px]:text-[10px] text-right underline decoration-dotted" id={`saturday-tooltip-${item.id}`}>{item.event_name}</p>
+                          <Tooltip anchorSelect={`#saturday-tooltip-${item.id}`}>{item.description}</Tooltip>
+                        </> :
+                        <p className="max-[425px]:text-[10px] text-right">{item.event_name}</p>
+                      }
                     </div>
                   ))}
                 </div>
@@ -348,7 +355,13 @@ export default function Home() {
                   }).sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime()).map((item) => (
                     <div key={item.id} className="flex justify-between gap-2">
                       <p className="max-[425px]:text-[10px] text-left w-fit">{new Date(item.date).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })}</p>
-                      <p className="max-[425px]:text-[10px] text-right">{item.event_name}</p>
+                      {item.description !== "" ?
+                        <>
+                          <p className="max-[425px]:text-[10px] text-right underline decoration-dotted" id={`sunday-tooltip-${item.id}`}>{item.event_name}</p>
+                          <Tooltip anchorSelect={`#sunday-tooltip-${item.id}`}>{item.description}</Tooltip>
+                        </> :
+                        <p className="max-[425px]:text-[10px] text-right">{item.event_name}</p>
+                      }
                     </div>
                   ))}
                 </div>
