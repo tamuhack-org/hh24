@@ -212,7 +212,7 @@ export default function Home() {
                 <p className="text-[#1b0000] text-center text-xl sm:text-3xl lg:text-5xl font-bold">Texas A&M University</p>
               </div>
               <div className="flex gap-4 w-full">
-                <Link href="https://register.tamuhack.com" target="_blank" rel="noopener noreferrer" className="register-button w-1/2 sm:text-2xl lg:text-4xl font-bold py-1 px-2 sm:py-2 sm:px-4 lg:py-4 lg:px-8 rounded-md sm:rounded-lg">Apply</Link>
+                <div className="register-button-disabled w-1/2 sm:text-2xl lg:text-4xl font-bold py-1 px-2 sm:py-2 sm:px-4 lg:py-4 lg:px-8 rounded-md sm:rounded-lg pointer-events-none">Apply</div>
                 <div className="register-button-disabled w-1/2 sm:text-2xl lg:text-4xl font-bold py-1 px-2 sm:py-2 sm:px-4 lg:py-4 lg:px-8 rounded-md sm:rounded-lg pointer-events-none ">Mentor</div>
               </div>
             </div>
