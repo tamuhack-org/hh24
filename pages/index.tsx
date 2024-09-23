@@ -280,7 +280,7 @@ export default function Home() {
                 </span>
               </p>
             </div>
-            <div className="flex flex-col w-full items-center p-4 sm:p-8 lg:p-16 gap-4 md:gap-8 max-w-[1200px] -mt-14 md:-mt-28">
+            <div className="flex flex-col w-full items-center p-4 sm:p-8 lg:p-16 gap-4 md:gap-8 max-w-[1200px] -mt-14">
               <h3 className={`${bevan.className} text-xl sm:text-2xl md:text-3xl lg:text-5xl text-[#FFBF00] text-center`}>
                 WAITLIST
               </h3>
