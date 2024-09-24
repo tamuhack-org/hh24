@@ -108,8 +108,10 @@ const chalkboardPrizes = [
 interface ScheduleItem {
   date: Date;
   description: string;
-  event_name: string;
+  eventName: string;
   id: string;
+  location: string;
+  tags: string[];
 };
 
 export default function Home() {
@@ -155,7 +157,7 @@ export default function Home() {
 
   useEffect(() => {
     const fetchSchedule = async () => {
-      const fetchResult = await fetch('https://hum-console.vercel.app/api/hh24').then((res) => res.json());
+      const fetchResult = await fetch('https://team.tamuhack.org/api/hh24-new').then((res) => res.json());
       setScheduleItems(fetchResult.Items);
     }
     fetchSchedule();
@@ -337,10 +339,10 @@ export default function Home() {
                       <p className="max-[425px]:text-[10px] text-left w-fit">{new Date(item.date).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })}</p>
                       {item.description !== "" ?
                         <>
-                          <p className="max-[425px]:text-[10px] text-right underline decoration-dotted" id={`saturday-tooltip-${item.id}`}>{item.event_name}</p>
+                          <p className="max-[425px]:text-[10px] text-right underline decoration-dotted" id={`saturday-tooltip-${item.id}`}>{item.eventName}</p>
                           <Tooltip anchorSelect={`#saturday-tooltip-${item.id}`}>{item.description}</Tooltip>
                         </> :
-                        <p className="max-[425px]:text-[10px] text-right">{item.event_name}</p>
+                        <p className="max-[425px]:text-[10px] text-right">{item.eventName}</p>
                       }
                     </div>
                   ))}
@@ -357,10 +359,10 @@ export default function Home() {
                       <p className="max-[425px]:text-[10px] text-left w-fit">{new Date(item.date).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })}</p>
                       {item.description !== "" ?
                         <>
-                          <p className="max-[425px]:text-[10px] text-right underline decoration-dotted" id={`sunday-tooltip-${item.id}`}>{item.event_name}</p>
+                          <p className="max-[425px]:text-[10px] text-right underline decoration-dotted" id={`sunday-tooltip-${item.id}`}>{item.eventName}</p>
                           <Tooltip anchorSelect={`#sunday-tooltip-${item.id}`}>{item.description}</Tooltip>
                         </> :
-                        <p className="max-[425px]:text-[10px] text-right">{item.event_name}</p>
+                        <p className="max-[425px]:text-[10px] text-right">{item.eventName}</p>
                       }
                     </div>
                   ))}
