@@ -108,10 +108,8 @@ const chalkboardPrizes = [
 interface ScheduleItem {
   date: Date;
   description: string;
-  eventName: string;
+  event_name: string;
   id: string;
-  location: string;
-  tags: string[];
 };
 
 export default function Home() {
@@ -157,7 +155,7 @@ export default function Home() {
 
   useEffect(() => {
     const fetchSchedule = async () => {
-      const fetchResult = await fetch('https://team.tamuhack.org/api/hh24-new').then((res) => res.json());
+      const fetchResult = await fetch('https://hum-console.vercel.app/api/hh24').then((res) => res.json());
       setScheduleItems(fetchResult.Items);
     }
     fetchSchedule();
@@ -287,11 +285,11 @@ export default function Home() {
                 WAITLIST
               </h3>
               <p className="text-white text-center text-sm sm:text-xl lg:text-2xl">
-              Due to the space limitations of the MSC, we are only able to accept a small number of hackers, but if your application is waitlisted, you may still get to hack with us! We will have a separate line for students on the waitlist and, starting at 10AM, we will admit people from the waitlist line until the MSC capacity has been reached.
-              Please come early to ensure you have a higher chance of being admitted to the event as it is <span className="italic">first come, first serve.</span>
-              <br />
-              <br />
-              If you were not accepted or waitlisted, unfortunately, we will not be able to accommodate you at the event. However, we encourage you to apply to TAMUhack in the spring!
+                Due to the space limitations of the MSC, we are only able to accept a small number of hackers, but if your application is waitlisted, you may still get to hack with us! We will have a separate line for students on the waitlist and, starting at 10AM, we will admit people from the waitlist line until the MSC capacity has been reached.
+                Please come early to ensure you have a higher chance of being admitted to the event as it is <span className="italic">first come, first serve.</span>
+                <br />
+                <br />
+                If you were not accepted or waitlisted, unfortunately, we will not be able to accommodate you at the event. However, we encourage you to apply to TAMUhack in the spring!
               </p>
             </div>
             <div className="flex flex-col w-full items-center p-4 sm:p-8 lg:p-16 gap-4 md:gap-8 max-w-[1200px] -mt-14">
@@ -351,10 +349,10 @@ export default function Home() {
                       <p className="max-[425px]:text-[10px] text-left w-fit">{new Date(item.date).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })}</p>
                       {item.description !== "" ?
                         <>
-                          <p className="max-[425px]:text-[10px] text-right underline decoration-dotted" id={`saturday-tooltip-${item.id}`}>{item.eventName}</p>
-                          <Tooltip anchorSelect={`#saturday-tooltip-${item.id}`}>{item.description}</Tooltip>
+                          <p className="max-[425px]:text-[10px] text-right underline decoration-dotted" id={`saturday-tooltip-${item.id}`}>{item.event_name}</p>
+                          <Tooltip anchorSelect={`#saturday-tooltip-${item.id}`} className="z-[9999] text-sm">{item.description}</Tooltip>
                         </> :
-                        <p className="max-[425px]:text-[10px] text-right">{item.eventName}</p>
+                        <p className="max-[425px]:text-[10px] text-right">{item.event_name}</p>
                       }
                     </div>
                   ))}
@@ -371,10 +369,10 @@ export default function Home() {
                       <p className="max-[425px]:text-[10px] text-left w-fit">{new Date(item.date).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })}</p>
                       {item.description !== "" ?
                         <>
-                          <p className="max-[425px]:text-[10px] text-right underline decoration-dotted" id={`sunday-tooltip-${item.id}`}>{item.eventName}</p>
-                          <Tooltip anchorSelect={`#sunday-tooltip-${item.id}`}>{item.description}</Tooltip>
+                          <p className="max-[425px]:text-[10px] text-right underline decoration-dotted" id={`sunday-tooltip-${item.id}`}>{item.event_name}</p>
+                          <Tooltip anchorSelect={`#sunday-tooltip-${item.id}`} className="z-[9999] text-sm">{item.description}</Tooltip>
                         </> :
-                        <p className="max-[425px]:text-[10px] text-right">{item.eventName}</p>
+                        <p className="max-[425px]:text-[10px] text-right">{item.event_name}</p>
                       }
                     </div>
                   ))}
@@ -385,7 +383,8 @@ export default function Home() {
               <Image src={postersRight} alt="Posters" className="" />
             </div>
           </div>
-          <div className={`${koulen.className} flex`}>
+          <div className={`${koulen.className} flex flex-col text-center gap-2`}>
+            <p className="text-[rgba(255,255,255,0.5)] italic sm:text-lg">Starred (*) events are mandatory</p>
             <p className="text-[rgba(255,255,255,0.5)] pb-4 sm:pb-8 italic sm:text-lg">Note: Schedule is subject to change</p>
           </div>
           <Image src={table} alt="Table" className="w-full -mb-1" />
