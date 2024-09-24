@@ -284,6 +284,18 @@ export default function Home() {
             </div>
             <div className="flex flex-col w-full items-center p-4 sm:p-8 lg:p-16 gap-4 md:gap-8 max-w-[1200px] -mt-14">
               <h3 className={`${bevan.className} text-xl sm:text-2xl md:text-3xl lg:text-5xl text-[#FFBF00] text-center`}>
+                WAITLIST
+              </h3>
+              <p className="text-white text-center text-sm sm:text-xl lg:text-2xl">
+              Due to the space limitations of the MSC, we are only able to accept a small number of hackers, but if your application is waitlisted, you may still get to hack with us! We will have a separate line for students on the waitlist and, starting at 10AM, we will admit people from the waitlist line until the MSC capacity has been reached.
+              Please come early to ensure you have a higher chance of being admitted to the event as it is <span className="italic">first come, first serve.</span>
+              <br />
+              <br />
+              If you were not accepted or waitlisted, unfortunately, we will not be able to accommodate you at the event. However, we encourage you to apply to TAMUhack in the spring!
+              </p>
+            </div>
+            <div className="flex flex-col w-full items-center p-4 sm:p-8 lg:p-16 gap-4 md:gap-8 max-w-[1200px] -mt-14">
+              <h3 className={`${bevan.className} text-xl sm:text-2xl md:text-3xl lg:text-5xl text-[#FFBF00] text-center`}>
                 PARKING
               </h3>
               <p className="text-white text-center text-sm sm:text-xl lg:text-2xl">
