@@ -337,7 +337,7 @@ export default function Home() {
             <div className="hidden lg:flex h-full items-center w-[10%]">
               <Image src={postersLeft} alt="Posters" />
             </div>
-            <div className="bg-blackboard aspect-[1954/4473] bg-cover bg-no-repeat w-full lg:w-[80%] h-fit text-[rgba(255,255,255,0.5)] text-xs sm:text-lg md:text-xl min-[1160px]:text-2xl px-[9%] pt-[28%] sm:pt-[28%] md:pt-[25%] lg:pt-[22%] pb-[5%] sm:pb-[20%] flex flex-col gap-3 sm:gap-4 md:gap-8 lg:gap-12">
+            <div className="bg-blackboard aspect-[1954/4473] bg-cover bg-no-repeat w-full lg:w-[80%] h-fit text-[rgba(255,255,255,0.5)] text-xs sm:text-lg md:text-xl min-[1160px]:text-2xl px-[9%] pt-[28%] sm:pt-[28%] md:pt-[25%] lg:pt-[22%] xl:pl-[9%] xl:pr-[6%] pb-[5%] sm:pb-[20%] flex flex-col gap-3 sm:gap-4 md:gap-8 lg:gap-12">
               <div className="flex flex-col max-[425px]:gap-1 gap-2 sm:gap-3 lg:gap-6 w-full">
                 <h3 className="w-full text-center max-[425px]:text-[12px] text-lg sm:text-2xl lg:text-4xl">Saturday</h3>
                 <div className="flex flex-col gap-1 sm:gap-2 lg:gap-3 min-[1160px]:gap-4">
