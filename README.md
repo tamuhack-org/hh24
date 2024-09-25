@@ -3,10 +3,10 @@
   <img src="./public/assets/landing/hh24-logo.png" width="150" />
 </p>
 
-<h1 style="text-align: center;">
+<h1 align="center">
 HowdyHack 2024
 </h1>
-<p style="text-align: center;">
+<p align="center">
 September 28-29, 2024
 </p>
 
