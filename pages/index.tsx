@@ -380,9 +380,11 @@ export default function Home() {
                         <>
                           <p className="max-[425px]:text-[10px] text-right underline decoration-dotted" id={`sunday-tooltip-${item.id}`}>{item.eventName}</p>
                           <Tooltip anchorSelect={`#sunday-tooltip-${item.id}`} className="z-[9999] text-sm">
-                            <div className="flex flex-col">
+                            <div className="flex flex-col gap-2 items-center text-center">
                               <p>{item.description}</p>
-                              <p>{item.location}</p>
+                              {item.location &&
+                                <p>{item.location}</p>
+                              }
                             </div>
                           </Tooltip>
                         </> :
