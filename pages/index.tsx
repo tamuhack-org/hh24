@@ -352,7 +352,14 @@ export default function Home() {
                       {item.description !== "" ?
                         <>
                           <p className="max-[425px]:text-[10px] text-right underline decoration-dotted" id={`saturday-tooltip-${item.id}`}>{item.eventName}</p>
-                          <Tooltip anchorSelect={`#saturday-tooltip-${item.id}`} className="z-[9999] text-sm">{item.description}</Tooltip>
+                          <Tooltip anchorSelect={`#saturday-tooltip-${item.id}`} className="z-[9999] text-sm max-w-[350px]">
+                            <div className="flex flex-col gap-2 items-center text-center">
+                              <p>{item.description}</p>
+                              {item.location &&
+                                <p>{item.location}</p>
+                              }
+                            </div>
+                          </Tooltip>
                         </> :
                         <p className="max-[425px]:text-[10px] text-right">{item.eventName}</p>
                       }
@@ -372,7 +379,12 @@ export default function Home() {
                       {item.description !== "" ?
                         <>
                           <p className="max-[425px]:text-[10px] text-right underline decoration-dotted" id={`sunday-tooltip-${item.id}`}>{item.eventName}</p>
-                          <Tooltip anchorSelect={`#sunday-tooltip-${item.id}`} className="z-[9999] text-sm">{item.description}</Tooltip>
+                          <Tooltip anchorSelect={`#sunday-tooltip-${item.id}`} className="z-[9999] text-sm">
+                            <div className="flex flex-col">
+                              <p>{item.description}</p>
+                              <p>{item.location}</p>
+                            </div>
+                          </Tooltip>
                         </> :
                         <p className="max-[425px]:text-[10px] text-right">{item.eventName}</p>
                       }
