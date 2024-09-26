@@ -79,12 +79,12 @@ export const resources = [
   },
   {
     name: 'Hacker Guide',
-    link: '/assets/HH23-Hacker-Start-Guide-Resources.pdf',
+    link: 'https://tamuhack.org/guide',
     description: 'Check out our hacker guide, where you can find the best resources for your project. Our hacker guide resource is your one-stop shop for hackathon success!',
   },
   {
     name: 'Discord',
-    link: 'https://discord.gg/NY9GF76JT5',
+    link: 'https://tamuhack.org/discord',
     description: 'Discord is where we will be sending announcements throughout the event. You can also use it to find a team, connect with other hackers, or get in contact with an organizer.'
   },
 ];

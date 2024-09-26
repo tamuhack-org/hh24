@@ -611,12 +611,16 @@ export default function Home() {
               </div>
             </div> */}
             {/* COMMENT WHEN EVENT STARTS */}
-            <div className="opacity-50 cursor-not-allowed select-none">
-              <p className="text-base mb-2 cursor-not-allowed">Hacker Resources</p>
+            <div className="">
+              <p className="text-base mb-2">Hacker Resources</p>
               <div className="flex flex-col gap-1 mb-2">
                 {resources.map((resource) =>
-                  <label className="font-semibold text-lg cursor-not-allowed" key={resource.name}>
-                    {resource.name}
+                  <label className="font-semibold text-lg" key={resource.name}>
+                  <CircleLink key={resource.name}>
+                  <Link href={resource.link} target="_blank" rel="noreferrer noopener" className="font-semibold text-lg" key={resource.name}>
+                      {resource.name}
+                    </Link>
+                  </CircleLink>
                   </label>)}
               </div>
             </div>
