@@ -108,7 +108,9 @@ const chalkboardPrizes = [
 interface ScheduleItem {
   date: Date;
   description: string;
-  event_name: string;
+  eventName: string;
+  location: string;
+  tags: string[];
   id: string;
 };
 
@@ -155,8 +157,8 @@ export default function Home() {
 
   useEffect(() => {
     const fetchSchedule = async () => {
-      const fetchResult = await fetch('https://hum-console.vercel.app/api/hh24').then((res) => res.json());
-      setScheduleItems(fetchResult.Items);
+      const fetchResult = await fetch('https://team.tamuhack.org/api/hh24-new').then((res) => res.json());
+      setScheduleItems(fetchResult);
     }
     fetchSchedule();
   }, []);
@@ -349,10 +351,10 @@ export default function Home() {
                       <p className="max-[425px]:text-[10px] text-left w-fit">{new Date(item.date).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })}</p>
                       {item.description !== "" ?
                         <>
-                          <p className="max-[425px]:text-[10px] text-right underline decoration-dotted" id={`saturday-tooltip-${item.id}`}>{item.event_name}</p>
+                          <p className="max-[425px]:text-[10px] text-right underline decoration-dotted" id={`saturday-tooltip-${item.id}`}>{item.eventName}</p>
                           <Tooltip anchorSelect={`#saturday-tooltip-${item.id}`} className="z-[9999] text-sm">{item.description}</Tooltip>
                         </> :
-                        <p className="max-[425px]:text-[10px] text-right">{item.event_name}</p>
+                        <p className="max-[425px]:text-[10px] text-right">{item.eventName}</p>
                       }
                     </div>
                   ))}
@@ -369,10 +371,10 @@ export default function Home() {
                       <p className="max-[425px]:text-[10px] text-left w-fit">{new Date(item.date).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })}</p>
                       {item.description !== "" ?
                         <>
-                          <p className="max-[425px]:text-[10px] text-right underline decoration-dotted" id={`sunday-tooltip-${item.id}`}>{item.event_name}</p>
+                          <p className="max-[425px]:text-[10px] text-right underline decoration-dotted" id={`sunday-tooltip-${item.id}`}>{item.eventName}</p>
                           <Tooltip anchorSelect={`#sunday-tooltip-${item.id}`} className="z-[9999] text-sm">{item.description}</Tooltip>
                         </> :
-                        <p className="max-[425px]:text-[10px] text-right">{item.event_name}</p>
+                        <p className="max-[425px]:text-[10px] text-right">{item.eventName}</p>
                       }
                     </div>
                   ))}
@@ -616,11 +618,11 @@ export default function Home() {
               <div className="flex flex-col gap-1 mb-2">
                 {resources.map((resource) =>
                   <label className="font-semibold text-lg" key={resource.name}>
-                  <CircleLink key={resource.name}>
-                  <Link href={resource.link} target="_blank" rel="noreferrer noopener" className="font-semibold text-lg" key={resource.name}>
-                      {resource.name}
-                    </Link>
-                  </CircleLink>
+                    <CircleLink key={resource.name}>
+                      <Link href={resource.link} target="_blank" rel="noreferrer noopener" className="font-semibold text-lg" key={resource.name}>
+                        {resource.name}
+                      </Link>
+                    </CircleLink>
                   </label>)}
               </div>
             </div>
