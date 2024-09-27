@@ -133,4 +133,8 @@ export const workshops = [
     name: "Intro to Hackathons",
     link: "https://docs.google.com/presentation/d/1r142lnKlA043jyYcFnjSFebxcm52usJ9MIVpLyUWQI4/edit?usp=sharing",
   },
+  {
+    name: "Intro to Dev Tools",
+    link: "https://docs.google.com/document/d/1fGFP5pulcy0TNXUyl-GnRr7pA_CYJA5CLUP8aMsYTD8/edit?usp=sharing",
+  },
 ];
