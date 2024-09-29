@@ -87,7 +87,7 @@ export const resources = [
   },
   {
     name: "Devpost",
-    link: "https://devpost.com",
+    link: "https://tamuhack.org/devpost",
     description:
       "Devpost is where you submit your projects. It also shows the rules, prizes, sponsors, and judges. Showcase your work and compete with other hackers!",
   },
